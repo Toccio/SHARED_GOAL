@@ -3,42 +3,40 @@ class ListsController < ApplicationController
 
 
   def index
-    @list = List.all
+    @lists = List.all
   end
 
   def show
   end
 
-  def new
-    @list = List.new
-    # authorize @list
-  end
+  # def new
+  #   @list = List.new
+  #   # authorize @list
+  # end
 
-  def create
-    @list = List.new(set_params)
-#     @list.user = current_user
-    # authorize @list
-      if @list.save
-        redirect_to list_path(@list), notice: 'The list was successfully created!'
-      else
-        render :new
-      end
-      
-  def edit
-    find_params
-  end
+  # def create
+  #   @list = List.new(set_params)
+  #   # @list.user = current_user
+  #   # authorize @list
+  #     if @list.save
+  #       redirect_to list_path(@list), notice: 'The list was successfully created!'
+  #     else
+  #       render :new
+  #     end
+  # end
 
-  def update
-    find_params
-    @list.update(set_params)
-    redirect_to show-action-route-prefix-here_path(@var)
-  end
+  # def edit
+  # end
 
-  def destroy
-    find_params
-    @list.destroy
-    redirect_to index-action-route-prefix-here_path
-  end
+  # def update
+  #   @list.update(set_params)
+  #   redirect_to show-action-route-prefix-here_path(@var)
+  # end
+
+  # def destroy
+  #   @list.destroy
+  #   redirect_to index-action-route-prefix-here_path
+  # end
 
   private
 
