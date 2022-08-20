@@ -1,6 +1,6 @@
-class CreateClasrooms < ActiveRecord::Migration[6.1]
+class CreateClassrooms < ActiveRecord::Migration[6.1]
   def change
-    create_table :clasrooms do |t|
+    create_table :classrooms do |t|
       t.string :name
       t.text :description
       t.string :start_date
@@ -10,6 +10,8 @@ class CreateClasrooms < ActiveRecord::Migration[6.1]
       t.string :language
       t.string :level
       t.integer :time
+      t.references :user, null: false, foreign_key: true
+      t.references :list, null: false, foreign_key: true
 
       t.timestamps
     end
