@@ -1,0 +1,2 @@
+class Clasroom < ApplicationRecord
+end
