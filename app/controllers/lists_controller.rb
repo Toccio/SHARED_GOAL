@@ -16,26 +16,24 @@ class ListsController < ApplicationController
 
   def create
     @list = List.new(set_params)
-#     @list.user = current_user
+    # @list.user = current_user
     # authorize @list
       if @list.save
         redirect_to list_path(@list), notice: 'The list was successfully created!'
       else
         render :new
       end
-      
+  end
+
   def edit
-    find_params
   end
 
   def update
-    find_params
     @list.update(set_params)
-    redirect_to show-action-route-prefix-here_path(@var)
+    redirect_to show-action-route-prefix-here_path(@list)
   end
 
   def destroy
-    find_params
     @list.destroy
     redirect_to index-action-route-prefix-here_path
   end
