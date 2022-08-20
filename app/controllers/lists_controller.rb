@@ -36,7 +36,7 @@ class ListsController < ApplicationController
   # def destroy
   #   @list.destroy
   #   redirect_to index-action-route-prefix-here_path
-  # end  
+  # end
 
   private
 
@@ -44,8 +44,8 @@ class ListsController < ApplicationController
     @list = List.find(params[:id])
   end
 
-  def set_params
-   # params.require(:list).permit(:name, :description)
-  end
+  # def set_params
+  #   params.require(:list).permit(:name, :description)
+  # end
 
 end
