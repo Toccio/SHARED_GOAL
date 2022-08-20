@@ -1,12 +1,12 @@
 require'faker'
 
-puts 'Creating database'
-List.destroy_all
+puts "Creating database"
 Skill.destroy_all
+List.destroy_all
+User.destroy_all
 Classroom.destroy_all
 Booking.destroy_all
-User.destroy_all
-puts 'Database created'
+puts "Database created 👌"
 
 
 # instruments = {
@@ -19,37 +19,52 @@ puts 'Database created'
 levels = ["Beginner", "Intermediate", "Advanced"]
 
 
-1.times do
-  User.create!(
+ user = User.create!(
     email: "scheggia1190@gmail.com",
     password:"123456",
-    avatar: Faker::Avatar.image
+    first_name: Faker::Games::Heroes.name,
+    last_name: Faker::Creature::Bird.common_family_name,
+    nickname: Faker::Games::Pokemon.name,
   )
-end
 
 
-4.times do
-  List.create!(
-    name: Faker::Music.instrument,
-    description: "Put the description"
-  )
-end
+  # list = nil
+  10.times do
+    @list = List.create!(
+      name: Faker::Music.instrument,
+      description: "Put the description"
+    )
+  end
 
-4.times do
-  Skill.create!(
-    level: levels.sample,
-  )
-end
+  10.times do
+    Skill.create!(
+      level: levels.sample,
+      user: user,
+      list: @list
+    )
+  end
 
-4.times do
-  Classroom.create!(
-    name: Faker::Music.band,
-    description: "Class description",
-    start_date: Faker::Date.in_date_period(month: 2),
-    end_date: Faker::Date.in_date_period(month: 3),
-    address: Faker::Address.full_address,
-    max_number_of_partecipants: rand(1..10),
-    language: Faker::Nation.language,
-    level: levels.sample,
-    time: rand(1..6)
-  )
+  10.times do
+    @classroom = Classroom.create!(
+      name: Faker::Music.band,
+      description: "Class description",
+      start_date: Faker::Date.in_date_period(month: 2),
+      end_date: Faker::Date.in_date_period(month: 3),
+      address: Faker::Address.full_address,
+      max_number_of_partecipants: rand(1..10),
+      language: Faker::Nation.language,
+      level: levels.sample,
+      time: rand(1..6),
+      user: user,
+      list: @list
+    )
+  end
+
+  10.times do
+    Booking.create!(
+      user:user,
+      classroom: @classroom
+    )
+  end
+
+puts "DB ready 👌"

@@ -1,4 +1,4 @@
 class Skill < ApplicationRecord
-  belongs_to :user_id
-  belongs_to :list_id
+  belongs_to :user
+  belongs_to :list
 end
