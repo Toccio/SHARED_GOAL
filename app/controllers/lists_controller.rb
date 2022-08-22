@@ -1,6 +1,5 @@
 class ListsController < ApplicationController
-  before_action :find_params, only: [:show, :edit, :update, :destroy]
-
+  before_action :find_params, only: :show
 
   def index
     @lists = List.all
@@ -47,5 +46,4 @@ class ListsController < ApplicationController
   # def set_params
   #   params.require(:list).permit(:name, :description)
   # end
-
 end
