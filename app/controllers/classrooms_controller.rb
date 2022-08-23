@@ -10,18 +10,18 @@ class ClassroomsController < ApplicationController
   end
 
   def new
-    @user = User.find(params[:user_id])
+    @list = List.find(params[:list_id])
     @classroom = Classroom.new
+    # @classroom.user = current_user
   end
 
   def create
-    @user = User.find(params[:user_id])
     @list = List.find(params[:list_id])
     @classroom = Classroom.new(set_params)
-    @classroom.user = @user
+    @classroom.user = current_user
     @classroom.list = @list
     if @classroom.save
-      redirect_to classroom_path(@classroom)
+      redirect_to list_classroom_path(@list, @classroom)
     else
       render :new
     end
@@ -32,12 +32,15 @@ class ClassroomsController < ApplicationController
 
   def update
     @classroom.update(set_params)
-    redirect_to classroom_path(@classroom)
+    @list = @classroom.list
+    redirect_to list_classroom_path(@list, @classroom)
   end
 
   def destroy
+    @classroom = Classroom.find(params[:id])
+    @list = @classroom.list
     @classroom.destroy
-    redirect_to classrooms_path
+    redirect_to list_classrooms_path(@list)
   end
 
   private
