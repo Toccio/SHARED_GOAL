@@ -10,18 +10,19 @@ class ClassroomsController < ApplicationController
   end
 
   def new
-    @user = User.find(params[:user_id])
+    @list = List.find(params[:list_id])
     @classroom = Classroom.new
   end
 
   def create
-    @user = User.find(params[:user_id])
     @list = List.find(params[:list_id])
     @classroom = Classroom.new(set_params)
-    @classroom.user = @user
+    @classroom.user = current_user
     @classroom.list = @list
+    # @classroom.user = @user
+    # @classroom.list = @list
     if @classroom.save
-      redirect_to classroom_path(@classroom)
+      redirect_to list_classroom_path(@classroom)
     else
       render :new
     end
@@ -44,6 +45,7 @@ class ClassroomsController < ApplicationController
 
   def find_params
     @classroom = Classroom.find(params[:id])
+    # authorize @classroom
   end
 
   def set_params
