@@ -24,6 +24,10 @@ gem 'redis', '~> 4.0'
 
 # FAKER
 gem 'faker'
+
+# PUNDIT
+gem 'pundit'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

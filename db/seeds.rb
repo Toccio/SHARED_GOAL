@@ -18,7 +18,6 @@ puts "Database created 👌"
 
 levels = ["Beginner", "Intermediate", "Advanced"]
 
-
  user = User.create!(
     email: "scheggia1190@gmail.com",
     password:"123456",
