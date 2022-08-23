@@ -2,23 +2,25 @@ class BookingsController < ApplicationController
   before_action :find_booking, only: [:show, :edit, :update, :destroy]
   # before_action :find_classroom, only: [:create, :new]
   def index
-    @bookings = current_user.classrooms
-    @booking = policy_scope(Classroom)
+    @bookings = current_user.bookings
+    # @booking = policy_scope(Classroom)
   end
 
   def new
+    @list = List.find(params[:list_id])
     @classroom = Classroom.find(params[:classroom_id])
     # authorize @classroom
     @booking = Booking.new
   end
 
   def create
+    @list = List.find(params[:list_id])
     @classroom = Classroom.find(params[:classroom_id])
     @booking = Booking.new
     @booking.classroom = @classroom
     @booking.user = current_user
-    if @booking.save
-      # redirect_to reservations_path
+    # raise
+    if @booking.save!
       redirect_to booking_path(@booking)
     else
       render :new
@@ -27,13 +29,6 @@ class BookingsController < ApplicationController
   end
 
   def show
-  end
-
-  def edit
-  end
-
-  def update
-
   end
 
   def destroy
