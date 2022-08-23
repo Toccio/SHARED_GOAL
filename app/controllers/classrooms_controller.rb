@@ -12,6 +12,7 @@ class ClassroomsController < ApplicationController
   def new
     @list = List.find(params[:list_id])
     @classroom = Classroom.new
+    # @classroom.user = current_user
   end
 
   def create
@@ -19,10 +20,8 @@ class ClassroomsController < ApplicationController
     @classroom = Classroom.new(set_params)
     @classroom.user = current_user
     @classroom.list = @list
-    # @classroom.user = @user
-    # @classroom.list = @list
     if @classroom.save
-      redirect_to list_classroom_path(@classroom)
+      redirect_to list_classroom_path(@list, @classroom)
     else
       render :new
     end
@@ -33,19 +32,21 @@ class ClassroomsController < ApplicationController
 
   def update
     @classroom.update(set_params)
-    redirect_to classroom_path(@classroom)
+    @list = @classroom.list
+    redirect_to list_classroom_path(@list, @classroom)
   end
 
   def destroy
+    @classroom = Classroom.find(params[:id])
+    @list = @classroom.list
     @classroom.destroy
-    redirect_to classrooms_path
+    redirect_to list_classrooms_path(@list)
   end
 
   private
 
   def find_params
     @classroom = Classroom.find(params[:id])
-    # authorize @classroom
   end
 
   def set_params
