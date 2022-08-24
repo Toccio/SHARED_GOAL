@@ -9,21 +9,21 @@ class ListsController < ApplicationController
   def show
   end
 
-  # def new
-  #   @list = List.new
-  #   # authorize @list
-  # end
+  def new
+    @list = List.new
+    # authorize @list
+  end
 
-  # def create
-  #   @list = List.new(set_params)
-  #   # @list.user = current_user
-  #   # authorize @list
-  #     if @list.save
-  #       redirect_to list_path(@list), notice: 'The list was successfully created!'
-  #     else
-  #       render :new
-  #     end
-  # end
+  def create
+    @list = List.new(set_params)
+    @list.user = current_user
+    authorize @list
+      if @list.save
+        redirect_to list_path(@list), notice: 'The list was successfully created!'
+      else
+        render :new
+      end
+  end
 
   # def edit
   # end
@@ -44,8 +44,8 @@ class ListsController < ApplicationController
     @list = List.find(params[:id])
   end
 
-  # def set_params
-  #   params.require(:list).permit(:name, :description)
-  # end
+  def set_params
+    params.require(:list).permit(:name, :description, :photo)
+  end
 
 end
