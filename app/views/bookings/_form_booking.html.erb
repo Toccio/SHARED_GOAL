@@ -1,8 +1,10 @@
 <div class="container">
   <div class="form-wrapper" style="width: 400px; margin: auto;">
     <h2>Join this class</h2>
-    <button>
+    <%= simple_form_for [@list, @classroom, @booking] do |f| %>
+      <%= f.button :submit, "Let's go!" %>
+    <% end %>
+
     <%= link_to "Check it now!", list_classroom_path(@list, @classroom) %>
-    </button>
   </div>
 </div>

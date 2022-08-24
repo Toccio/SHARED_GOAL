@@ -11,17 +11,17 @@ class BookingsController < ApplicationController
     @classroom = Classroom.find(params[:classroom_id])
     # authorize @classroom
     @booking = Booking.new
+
   end
 
   def create
     @list = List.find(params[:list_id])
     @classroom = Classroom.find(params[:classroom_id])
     @booking = Booking.new
-    @booking.classroom = @classroom
     @booking.user = current_user
-    # raise
+    @booking.classroom = @classroom
     if @booking.save!
-      redirect_to booking_path(@booking)
+      redirect_to list_classroom_bookings_path(@list, @classroom, @booking)
     else
       render :new
     end
@@ -36,7 +36,6 @@ class BookingsController < ApplicationController
     # redirect_to booking_path
   end
 
-
   private
 
   def find_booking
@@ -47,5 +46,4 @@ class BookingsController < ApplicationController
   #   @classroom = Classroom.find(params[:id])
   #   # authorize @classroom
   # end
-
 end
