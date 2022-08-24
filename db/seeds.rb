@@ -60,11 +60,9 @@ levels = ["Beginner", "Intermediate", "Advanced"]
     )
   end
 
-  10.times do
-    Booking.create!(
-      user:user,
-      classroom: @classroom
-    )
-  end
+  Booking.create!(
+    user:user,
+    classroom: @classroom
+  )
 
 puts "DB ready 👌"

@@ -12,7 +12,8 @@
 @import "components/index";
 @import "pages/index";
 
-
 body {
-  background-color: #F7F7F2;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
