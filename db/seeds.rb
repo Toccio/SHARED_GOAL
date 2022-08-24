@@ -31,7 +31,8 @@ levels = ["Beginner", "Intermediate", "Advanced"]
   10.times do
     @list = List.create!(
       name: Faker::Music.instrument,
-      description: "Put the description"
+      description: "Put the description",
+      photo: Faker::LoremFlickr.image(size: "4000x500", search_terms: ['sports'])
     )
   end
 
