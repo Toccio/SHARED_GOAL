@@ -1,11 +1,15 @@
-<h1>Categories</h1>
+<div class="main-container">
+  <h1>Categories</h1>
 
-<div class="cards">
-  <% @lists.each do |list| %>
-    <div class="card-category" style="background-image: <%= list.photo %>">
-      <h2> <%= list.name %> </h2>
-      <p><strong> <%= list.description %> </strong></p>
-      <%= link_to "Checkout this category", list_path(list.id), class: "btn" %>
-    </div>
-  <% end %>
+
+  <div class="cards">
+    <% @lists.each do |list| %>
+      <div class="card" style="background-image: <%= list.photo %>">
+        <h2> <%= list.name %> </h2>
+        <br>
+        <p><strong> <%= list.description %> </strong></p>
+      <%= link_to "Check it out", list_path(list.id), class: "btn"  %>
+      </div>
+    <% end %>
+  </div>
 </div>
