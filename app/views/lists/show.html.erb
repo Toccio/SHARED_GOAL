@@ -11,3 +11,8 @@
     <%=link_to "Lets go back", lists_path, class: "btn" %>
   </div>
 </div>
+
+<% @classrooms.each do |classroom| %>
+  <%= classroom.name %>
+  <%= classroom.description %>
+<% end %>

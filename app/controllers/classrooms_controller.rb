@@ -4,6 +4,11 @@ class ClassroomsController < ApplicationController
   def index
     @classrooms = Classroom.all
     # @classrooms = policy_scope(Classroom)
+    # if params[:query].present?
+    #   @classrooms = Classroom.search(params[:query])
+    # else
+    #   @classrooms = Classroom.all
+    # end
   end
 
   def show
