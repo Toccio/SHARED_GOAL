@@ -3,4 +3,5 @@ class List < ApplicationRecord
   has_many :classrooms, dependent: :destroy
   validates :name, presence: true
   validates :description, presence: true
+  validates :photo, presence: true
 end
