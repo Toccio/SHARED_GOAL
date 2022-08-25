@@ -1,11 +1,16 @@
 class ListsController < ApplicationController
-  before_action :find_params, only: :show
+  before_action :set_list, only: :show
 
   def index
-    @lists = List.all
+    if params[:query].present?
+      @lists = List.global_search(params[:query])
+    else
+      @lists = List.all
+    end
   end
 
   def show
+    @classrooms = @list.classrooms
   end
 
   def new
@@ -39,7 +44,7 @@ class ListsController < ApplicationController
 
   private
 
-  def find_params
+  def set_list
     @list = List.find(params[:id])
   end
 
