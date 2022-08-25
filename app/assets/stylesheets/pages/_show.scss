@@ -19,39 +19,38 @@
 .card {
   margin: 20px;
   padding: 20px;
-  width: 400px;
-  min-height: 250px;
+  width: 500px;
+  min-height: 200px;
   display: grid;
   grid-template-rows: 20px 50px 1fr 50px;
-  border-radius: 5px;
+  border-radius: 10px;
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
   transition: all 0.2s;
-
 
   h2 {
     font-weight: 400;
     color: #ffffff;
     align-self: center;
-    text-align: left;
+    text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
   }
 
   p {
     color: #ffffff;
-    align-self: left;
-    text-align: left;
+    align-self: center;
+    text-align: center;
   }
 
   .btn {
     grid-row: 4/5;
+    align-self: center;
     color: #ffffff;
     padding: 8px 16px;
     border-radius: 4px;
     background: #160d1c;
     transition: background 0.3s ease;
     margin: auto;
-    margin-right: initial;
   }
 
   .btn::after {
@@ -75,9 +74,6 @@
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
   transform: scale(1.01);
 }
-
-
-
 
 
 /* CARD BACKGROUNDS */
