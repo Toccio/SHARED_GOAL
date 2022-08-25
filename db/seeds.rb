@@ -34,6 +34,21 @@ levels = ["Beginner", "Intermediate", "Advanced"]
       description: "Put the description",
       photo: Faker::LoremFlickr.image(size: "4000x500", search_terms: ['sports'])
     )
+    10.times do
+      @classroom = Classroom.create!(
+        name: Faker::Music.band,
+        description: "Class description",
+        start_date: Faker::Date.in_date_period(month: 2),
+        end_date: Faker::Date.in_date_period(month: 3),
+        address: Faker::Address.full_address,
+        max_number_of_partecipants: rand(1..10),
+        language: Faker::Nation.language,
+        level: levels.sample,
+        time: rand(1..6),
+        user: user,
+        list: @list
+      )
+    end
   end
 
   10.times do
@@ -44,21 +59,7 @@ levels = ["Beginner", "Intermediate", "Advanced"]
     )
   end
 
-  10.times do
-    @classroom = Classroom.create!(
-      name: Faker::Music.band,
-      description: "Class description",
-      start_date: Faker::Date.in_date_period(month: 2),
-      end_date: Faker::Date.in_date_period(month: 3),
-      address: Faker::Address.full_address,
-      max_number_of_partecipants: rand(1..10),
-      language: Faker::Nation.language,
-      level: levels.sample,
-      time: rand(1..6),
-      user: user,
-      list: @list
-    )
-  end
+
 
   Booking.create!(
     user:user,

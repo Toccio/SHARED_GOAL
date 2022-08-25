@@ -11,6 +11,8 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "pages/home";
+@import "pages/show";
 
 body {
   min-height: 100vh;
@@ -21,4 +23,104 @@ body {
 
 h1, h2 {
   font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.popcat {
+padding-top: 10px;
+display: flex;
+align-items: center;
+justify-content: center;
+
+}
+
+/* CARDS */
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  margin: 20px;
+  padding: 20px;
+  width: 400px;
+  height: 300px;
+  display: flex;
+  grid-template-rows: 20px 50px 1fr 50px;
+  border-radius: 5px;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s;
+  justify-content: space-between;
+
+  h2 {
+    font-weight: 400;
+    color: #ffffff;
+    text-align: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  p {
+    color: #ffffff;
+    text-align: left;
+  }
+
+  .btn {
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 4px;
+    background: #160d1c;
+    transition: background 0.3s ease;
+    width: fit-content;
+    align-self: end;
+  }
+
+  .btn::after {
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: rgba(255, 255, 255, 0.6);
+    transition: all 0.5s;
+  }
+
+  .btn:hover::after {
+    width: 100%;
+    background: #4D04C4;
+    color: white;
+  }
+}
+
+.card:hover {
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
+  transform: scale(1.01);
+}
+
+/* CARD BACKGROUNDS */
+
+.card {
+  background: radial-gradient(#311d3f, #4c2d62);
+
+}
+
+.cat_image {
+    width: 358px;
+    height: 100px;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 1600px) {
+  .cards {
+    justify-content: center;
+  }
 }
