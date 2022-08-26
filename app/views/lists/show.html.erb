@@ -1,14 +1,12 @@
 <div class="main-container">
-  <div class="card">
-    <h1> <%= @list.name %> </h1>
-    <p> <%= @list.description %></p>
-    <img src= "<%= @list.photo %>">
-    <%= link_to "Check it out",  class: "btn"  %>
-    <br>
-    <br>
-    <br>
-    <br>
-    <%=link_to "Lets go back", lists_path, class: "btn" %>
+<%=link_to "Lets go back", lists_path, class: "btn" %>
+  <div class="cards">
+    <% @classrooms.each do |classroom| %>
+      <div class="card">
+        <%= classroom.name%>
+        <%= link_to "Check it out", "#", class: "btn"  %>
+      </div>
+    <%end%>
   </div>
 </div>
 
