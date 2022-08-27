@@ -1,56 +1,15 @@
 class ListsController < ApplicationController
-  before_action :set_list, only: :show
-
   def index
     if params[:query].present?
       @lists = List.global_search(params[:query])
     else
-      @lists = List.all
+      @lists = policy_scope(List)
     end
   end
 
   def show
+    @list = policy_scope(List).find(params[:id])
+    authorize @list
     @classrooms = @list.classrooms
   end
-
-  def new
-    @list = List.new
-    # authorize @list
-  end
-
-  def create
-    @list = List.new(set_params)
-    @list.user = current_user
-    authorize @list
-      if @list.save
-        redirect_to list_path(@list), notice: 'The list was successfully created!'
-      else
-        render :new
-      end
-  end
-
-  # def edit
-  # end
-
-  # def update
-  #   @list.update(set_params)
-  #   redirect_to show-action-route-prefix-here_path(@var)
-  # end
-
-  # def destroy
-  #   @list.destroy
-  #   redirect_to index-action-route-prefix-here_path
-  # end
-
-  private
-
-  def set_list
-    @list = List.find(params[:id])
-  end
-
-
-  def set_params
-    params.require(:list).permit(:name, :description, :photo)
-  end
-
 end

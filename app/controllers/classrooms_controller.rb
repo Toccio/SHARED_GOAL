@@ -2,8 +2,7 @@ class ClassroomsController < ApplicationController
   before_action :find_params, only: [:show, :edit, :update, :destroy]
 
   def index
-    @classrooms = Classroom.all
-    # @classrooms = policy_scope(Classroom)
+    @classrooms = policy_scope(Classroom)
     # if params[:query].present?
     #   @classrooms = Classroom.search(params[:query])
     # else
@@ -15,14 +14,16 @@ class ClassroomsController < ApplicationController
   end
 
   def new
-    @list = List.find(params[:list_id])
+    @list = policy_scope(List).find(params[:list_id])
     @classroom = Classroom.new
+    authorize @classroom
     # @classroom.user = current_user
   end
 
   def create
-    @list = List.find(params[:list_id])
+    @list = policy_scope(List).find(params[:list_id])
     @classroom = Classroom.new(set_params)
+    authorize @classroom
     @classroom.user = current_user
     @classroom.list = @list
     if @classroom.save
@@ -42,7 +43,7 @@ class ClassroomsController < ApplicationController
   end
 
   def destroy
-    @classroom = Classroom.find(params[:id])
+    @classroom = policy_scope(Classroom).find(params[:id])
     @list = @classroom.list
     @classroom.destroy
     redirect_to list_classrooms_path(@list)
@@ -51,7 +52,8 @@ class ClassroomsController < ApplicationController
   private
 
   def find_params
-    @classroom = Classroom.find(params[:id])
+    @classroom = policy_scope(Classroom).find(params[:id])
+    authorize @classroom
   end
 
   def set_params
