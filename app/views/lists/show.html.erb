@@ -1,4 +1,6 @@
 <div class="main-container">
+<%= link_to "Create class", new_list_classroom_path(@list)%>
+
 <%=link_to "Lets go back", lists_path, class: "btn" %>
   <div class="cards">
     <% @classrooms.each do |classroom| %>
