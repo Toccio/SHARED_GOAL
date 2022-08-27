@@ -1,23 +1,20 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :edit, :update, :destroy]
   # before_action :find_classroom, only: [:create, :new]
-  def index
-    @bookings = current_user.bookings
-    # @booking = policy_scope(Classroom)
-  end
 
   def new
-    @list = List.find(params[:list_id])
-    @classroom = Classroom.find(params[:classroom_id])
+    @list = policy_scope(List).find(params[:list_id])
+    @classroom = policy_scope(Classroom).find(params[:classroom_id])
     # authorize @classroom
     @booking = Booking.new
-
+    authorize @booking
   end
 
   def create
-    @list = List.find(params[:list_id])
-    @classroom = Classroom.find(params[:classroom_id])
+    @list = policy_scope(List).find(params[:list_id])
+    @classroom = policy_scope(Classroom).find(params[:classroom_id])
     @booking = Booking.new
+    authorize @booking
     @booking.user = current_user
     @booking.classroom = @classroom
     if @booking.save!
@@ -25,7 +22,6 @@ class BookingsController < ApplicationController
     else
       render :new
     end
-    # authorize @booking
   end
 
   def show
@@ -51,8 +47,10 @@ class BookingsController < ApplicationController
 
   private
 
-  def set_booking
-    @booking = Booking.find(params[:id])
+  def find_booking
+    @booking = policy_scope(Booking).find(params[:id])
+    authorize @booking
+
   end
 
   def set_params
