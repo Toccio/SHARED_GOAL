@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
-    authorize @user
+    @classrooms = current_user.classrooms.includes(:bookings)
+
   end
 end
