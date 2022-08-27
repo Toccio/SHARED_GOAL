@@ -1,43 +1,42 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "#", class: "navbar-brand" do %>
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+   <%= link_to "#", class: "navbar-brand" do %>
     <%= image_tag "logo.png" %>
   <% end %>
-  <%= simple_form_for :search, url: root_path, method: :get do |f| %>
-  <div class="search-form-control form-group" style="width: 200%;">
-    <input class="form-control string required" type="text" name="search[query]" id="search_query" />
-    <button name="button" type="submit" class="btn btn-primary" id="search-button">
-      <span><i class="fas fa-search"></i> Search</span>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
     </button>
-  </div>
-<% end %>
-
-<%= form_tag lists_path, method: :get do %>
-  <%= text_field_tag :query, nil, placeholder: " search.."%>
-<% end %>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
       <% if user_signed_in? %>
-        <li class="nav-item active">
+        <li class="nav-item">
           <%= link_to "Home", root_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Categories", lists_path, class: "nav-link" %>
+          <%= link_to "My classes", "#", class: "nav-link" %>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Browse
+          </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#">Action</a></li>
             <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
         </li>
         <li class="nav-item">
-          <%= link_to "My Classes", "#", class: "nav-link" %>
+          <a class="nav-link disabled">Disabled</a>
         </li>
-        <li class="nav-item dropdown">
+      </ul>
+      <form class="d-flex" role="search">
+        <%= form_tag lists_path, method: :get do %>
+          <%= text_field_tag :query, nil, placeholder: " search.."%>
+        <button class="btn btn-outline-success" type="submit">Search</button>
+        <% end %>
+      </form>
+      <li class="nav-item dropdown">
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{current_user.nickname}", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Action", "#", class: "dropdown-item" %>
@@ -50,6 +49,6 @@
           <%= link_to "Login", new_user_session_path, class: "nav-link" %>
         </li>
       <% end %>
-    </ul>
+    </div>
   </div>
-</div>
+</nav>
