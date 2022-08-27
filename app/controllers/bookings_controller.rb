@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :find_booking, only: [:show, :edit, :update, :destroy]
+  before_action :set_booking, only: [:show, :edit, :update, :destroy]
   # before_action :find_classroom, only: [:create, :new]
 
   def new
@@ -27,6 +27,19 @@ class BookingsController < ApplicationController
   def show
   end
 
+  def edit
+  end
+
+  def update
+    @booking.update(set_params)
+    redirect_to list_classroom_bookings_path(@list, @classroom, @booking)
+    # authorize @booking
+
+    booking.status == 'accepted'
+    booking.rejected! # same as booking.update(status: :rejected)
+    Booking.accepted #Booking.where(status: 'accepted')
+  end
+
   def destroy
     @booking.destroy
     # redirect_to booking_path
@@ -37,6 +50,11 @@ class BookingsController < ApplicationController
   def find_booking
     @booking = policy_scope(Booking).find(params[:id])
     authorize @booking
+
+  end
+
+  def set_params
+    params.require(:booking).permit(:status)
   end
 
   # def find_classroom
