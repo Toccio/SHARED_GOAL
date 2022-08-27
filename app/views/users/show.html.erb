@@ -1,14 +1,20 @@
 <h1>My profile</h1>
 
-<%# <% Booking.all.each do |booking| %> %>
-  <%# <%= current_user.id = booking.user_id %> %>
-<%# <% end %> %>
+<h2> Incoming bookings</h2>
 
 <% @classrooms.each do |classroom| %>
   <% if !classroom.bookings.empty? %>
     <%= classroom.name %>
     <% classroom.bookings.each do |booking| %>
-      <%= booking.status %>
+      <p><%= booking.user.email %></p>
+      <p><%= booking.status %></p>
     <% end %>
   <% end %>
+<% end %>
+
+<h2>Outcoming bookings</h2>
+
+<% @out_bookings.each do |out_booking| %>
+  <%= out_booking.classroom.name %>
+  <%= out_booking.status %>
 <% end %>
