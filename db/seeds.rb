@@ -28,13 +28,13 @@ levels = ["Beginner", "Intermediate", "Advanced"]
 
 
   # list = nil
-  10.times do
+  12.times do
     @list = List.create!(
       name: Faker::Music.instrument,
       description: "Put the description",
-      photo: Faker::LoremFlickr.image(size: "4000x500", search_terms: ['sports'])
+      photo: Faker::LoremFlickr.image(size: "358x100", search_terms: ['sports'])
     )
-    10.times do
+    12.times do
       @classroom = Classroom.create!(
         name: Faker::Music.band,
         description: "Class description",
@@ -51,7 +51,7 @@ levels = ["Beginner", "Intermediate", "Advanced"]
     end
   end
 
-  10.times do
+  12.times do
     Skill.create!(
       level: levels.sample,
       user: user,

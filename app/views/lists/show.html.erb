@@ -3,14 +3,10 @@
   <div class="cards">
     <% @classrooms.each do |classroom| %>
       <div class="card">
-        <%= classroom.name%>
+        <h2> <%= classroom.name %> </h2>
+        <p> <%= classroom.description %> </p>
         <%= link_to "Check it out", "#", class: "btn"  %>
       </div>
     <%end%>
   </div>
 </div>
-
-<% @classrooms.each do |classroom| %>
-  <%= classroom.name %>
-  <%= classroom.description %>
-<% end %>
