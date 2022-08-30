@@ -14,15 +14,18 @@
 @import "pages/home";
 @import "pages/show";
 
+
 body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: #4c2d62;
 }
 
 h1, h2 {
   font-family: Georgia, 'Times New Roman', Times, serif;
+  color: #ffffff;
 }
 
 * {
@@ -77,26 +80,26 @@ justify-content: center;
     color: #ffffff;
     padding: 8px 16px;
     border-radius: 4px;
-    background: #d8c691;
+    background: #160d1c;
     transition: background 0.3s ease;
     width: fit-content;
     align-self: end;
   }
 
-  .btn::after {
-    position: absolute;
-    bottom: 25px;
-    left: 0;
-    width: 0%;
-    height: 3px;
-    background-color: rgba(255, 255, 255, 0.6);
-    transition: all 0.5s;
-  }
+  // .btn::after {
+  //   position: absolute;
+  //   bottom: 25px;
+  //   left: 0;
+  //   width: 0%;
+  //   height: 3px;
+  //   background-color: rgba(255, 255, 255, 0.6);
+  //   transition: all 0.5s;
+  // }
 
-  .btn:hover::after {
-    width: 100%;
-    background: #d8c691;
+  .btn:hover{
+    background: #311d3f;
     color: white;
+    transform: scale(1.05);
   }
 }
 
@@ -108,7 +111,7 @@ justify-content: center;
 /* CARD BACKGROUNDS */
 
 .card {
-  background: radial-gradient(#311d3f, #4c2d62);
+  background: #CBB26B;
 
 }
 
