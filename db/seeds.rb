@@ -26,11 +26,12 @@ levels = ["Beginner", "Intermediate", "Advanced"]
     nickname: Faker::Games::Pokemon.name,
   )
 
+list_category = ["Music", "Web Development", "Photography", "Animation", "Graphic Design", "Illustration"]
 
   # list = nil
   12.times do
     @list = List.create!(
-      name: Faker::Music.instrument,
+      name: list_category.sample,
       description: "Put the description",
       photo: Faker::LoremFlickr.image(size: "358x100", search_terms: ['sports'])
     )
