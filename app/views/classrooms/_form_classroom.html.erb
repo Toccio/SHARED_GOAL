@@ -12,7 +12,7 @@
           <%= f.input :language %>
           <%= f.input :time %>
           <%= f.input :created_at, :order =>  [:day, :year, :month] %>
-          <%# <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+          <%= f.input :photo, as: :file, input_html: { multiple: false } %>
           <%# <%= f.input :updated_at, :order => [:day, :month, :year] %>
          <button class="form-actions w-100 rounded"> <%= f.button :submit, "Let's go!" %> </button>
       <% end %>
