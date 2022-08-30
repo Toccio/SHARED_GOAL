@@ -1,6 +1,49 @@
+<%=link_to "Let's go back", lists_path, class: "button" %>
+<div class="show-container container w-100 pt-3">
+  <div class="container ">
+      <div class="row">
+        <div class="col-12 col-lg-6">
+          <div class="border-bottom">
+            <h2><strong> <%= @classroom.name %> </strong></h2>
+          </div>
+          <div class="more-info pt-3 border-bottom">
+            <h5 class="more-how"><strong> What we will learn </strong></h5>
+            <p><%=@classroom.description %></p>
+          </div>
+          <div class="more-info pt-3">
+            <h5 class="more-how"><strong> More info </strong></h5>
+            <div class="d-flex pt-3">
+              <div class="row">
+                <p>Starts at: <%=@classroom.start_date %></p>
+                <p>Ends at: <%=@classroom.end_date %></p>
+                <p>Location: <%=@classroom.address %></p>
+              </div>
+              <div class="row">
+                <p>Skill level: <%=@classroom.level %></p>
+                <p>Language: <%=@classroom.language %></p>
+                <p>Duration: <%=@classroom.time %></p>
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class= "row" id="btn">
+          <%=link_to "Join now", "#", class: "join-button" %>
+          </div>
+        </div>
+        <div class="col-12 col-lg-6">
+          <img src="https://res.cloudinary.com/dmgja2szi/image/upload/v1661595008/sewimming_vd3o3l.jpg" alt="" class="fulmine">
+        </div>
+      </div>
+    </div>
+  </div>
 
-<%= @classroom.name %>
-<br>
-<%= @classroom.description %>
 
-<%= link_to "delete", classroom_path(@classroom), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+
+
+
+
+
+
+  <%# <%= link_to "delete", classroom_path(@classroom), data: { confirm: "Are you sure?" }, method: :delete %>
+</div>
