@@ -10,7 +10,8 @@ class MessagesController < ApplicationController
        if @message.save
 
         ActionCable.server.broadcast("chatroom-#{@chatroom.id}",
-          render_to_string(partial: "message", locals: {message: @message})
+          render_to_string(partial: "message", locals: {message: @message}),
+          sender_id: @message.user.id
       )
 
         redirect_to chatroom_path(@chatroom, anchor: "message-#{@message.id}")
