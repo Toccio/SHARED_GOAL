@@ -1,4 +1,4 @@
-require'faker'
+require 'faker'
 
 puts "Creating database"
 Skill.destroy_all
@@ -18,18 +18,25 @@ puts "Database created 👌"
 
 levels = ["Beginner", "Intermediate", "Advanced"]
 
- user = User.create!(
-    email: "scheggia1190@gmail.com",
-    password:"123456",
-    first_name: Faker::Games::Heroes.name,
-    last_name: Faker::Creature::Bird.common_family_name,
-    nickname: Faker::Games::Pokemon.name,
-  )
+user = User.create!(
+  email: "scheggia1190@gmail.com",
+  password:"123456",
+  first_name: Faker::Games::Heroes.name,
+  last_name: Faker::Creature::Bird.common_family_name,
+  nickname: Faker::Games::Pokemon.name,
+)
 
 list_category = ["Music", "Web Development", "Photography", "Animation", "Graphic Design", "Illustration"]
 
   # list = nil
+12.times do
+  @list = List.create!(
+    name: Faker::Music.instrument,
+    description: "Put the description",
+    photo: Faker::LoremFlickr.image(size: "358x100", search_terms: ['sports'])
+  )
   12.times do
+<<<<<<< Updated upstream
     @list = List.create!(
       name: list_category.sample,
       description: "Put the description",
@@ -55,17 +62,36 @@ list_category = ["Music", "Web Development", "Photography", "Animation", "Graphi
 
   12.times do
     Skill.create!(
+=======
+    @classroom = Classroom.create!(
+      name: Faker::Music.band,
+      description: "Class description",
+      category: %w[Music Fitness Languages Hiking Gardening].sample,
+      start_date: Faker::Date.in_date_period(month: 2),
+      end_date: Faker::Date.in_date_period(month: 3),
+      address: Faker::Address.full_address,
+      max_number_of_partecipants: rand(1..10),
+      language: Faker::Nation.language,
+>>>>>>> Stashed changes
       level: levels.sample,
+      time: rand(1..6),
       user: user,
       list: @list
     )
   end
+end
 
-
-
-  Booking.create!(
-    user:user,
-    classroom: @classroom
+12.times do
+  Skill.create!(
+    level: levels.sample,
+    user: user,
+    list: @list
   )
+end
+
+Booking.create!(
+  user: user,
+  classroom: @classroom
+)
 
 puts "DB ready 👌"
