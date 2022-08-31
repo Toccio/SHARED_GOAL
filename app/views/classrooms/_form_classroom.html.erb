@@ -5,13 +5,18 @@
           <%= f.input :name, class: "name-form" %>
           <%= f.input :description %>
           <%= f.input :category, collection: %w[Music Fitness Languages Hiking Gardening]%>
-          <%= f.input :start_date %>
-          <%= f.input :end_date %>
+          <div class="row g-3">
+            <div class="col">
+              <%= f.input :start_date %>
+            </div>
+            <div class="col">
+              <%= f.input :end_date %>
+            </div>
+          </div>
+          <%= f.input :time %>
           <%= f.input :address %>
           <%= f.input :level %>
           <%= f.input :language %>
-          <%= f.input :time %>
-          <%= f.input :created_at, :order =>  [:day, :year, :month] %>
           <%= f.input :photo, as: :file, input_html: { multiple: false } %>
           <%# <%= f.input :updated_at, :order => [:day, :month, :year] %>
          <button class="form-actions w-100 rounded"> <%= f.button :submit, "Let's go!" %> </button>
