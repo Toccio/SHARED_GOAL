@@ -31,8 +31,9 @@
           </div>
         </div>
         <div class="col-12 col-lg-6">
-          <img src="https://res.cloudinary.com/dmgja2szi/image/upload/v1661595008/sewimming_vd3o3l.jpg" alt="" class="fulmine">
+          <%= cl_image_tag @classroom.photo.key, height: 300, width: 400, crop: :fill %>
         </div>
+
       </div>
     </div>
   </div>

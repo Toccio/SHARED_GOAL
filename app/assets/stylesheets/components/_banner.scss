@@ -13,8 +13,25 @@
 }
 
 .banner p {
-  font-size: 20px;
+  font-size: 32px;
   color: white;
-  opacity: .7;
+
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.btn {
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 5px;
+  border:#CBB26B;
+  background: #160d1c;
+  transition: background 0.3s ease;
+  width: fit-content;
+  align-self: end;
+
+}
+
+.btn:hover {
+  background: #CBB26B;
+  transform: scale(1.1);
 }
