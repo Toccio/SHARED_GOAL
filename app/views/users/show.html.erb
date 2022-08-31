@@ -1,14 +1,20 @@
-<h1>My profile</h1>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <h1>My profile</h1>
 
-<%# <% Booking.all.each do |booking| %>
-  <%# <%= current_user.id = booking.user_id %>
-<%# <% end %>
+      <%# <% Booking.all.each do |booking| %>
+        <%# <%= current_user.id = booking.user_id %>
+      <%# <% end %>
 
-<% @classrooms.each do |classroom| %>
-  <% if !classroom.bookings.empty? %>
-    <%= classroom.name %>
-    <% classroom.bookings.each do |booking| %>
-      <%= booking.status %>
-    <% end %>
-  <% end %>
-<% end %>
+      <% @classrooms.each do |classroom| %>
+        <% if !classroom.bookings.empty? %>
+          <%= classroom.name %>
+          <% classroom.bookings.each do |booking| %>
+            <%= booking.status %>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
