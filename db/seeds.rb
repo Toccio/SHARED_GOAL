@@ -46,7 +46,7 @@ list_category = ["Music", "Web Development", "Photography", "Animation", "Graphi
       @classroom = Classroom.create!(
         name: Faker::Music.band,
         description: "Class description",
-        category: %w[Music Fitness Languages Hiking Gardening].sample
+        category: %w[Music Fitness Languages Hiking Gardening].sample,
         start_date: Faker::Date.in_date_period(month: 2),
         end_date: Faker::Date.in_date_period(month: 3),
         address: Faker::Address.full_address,
