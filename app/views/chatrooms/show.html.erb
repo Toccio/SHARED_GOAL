@@ -9,11 +9,7 @@
   >
 
     <% @chatroom.messages.each do |message| %>
-      <div class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
-        <div class="<%= message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>">
-          <%= render "messages/message", message: message %>
-        </div>
-      </div>
+          <%= render "messages/message", message: message, current_user: current_user %>
     <% end %>
   </div>
   <%= simple_form_for [@chatroom, @message], remote: true do |f| %>
