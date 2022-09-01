@@ -36,33 +36,6 @@ list_category = ["Music", "Web Development", "Photography", "Animation", "Graphi
     photo: Faker::LoremFlickr.image(size: "358x100", search_terms: ['sports'])
   )
   12.times do
-<<<<<<< Updated upstream
-    @list = List.create!(
-      name: list_category.sample,
-      description: "Put the description",
-      photo: Faker::LoremFlickr.image(size: "358x100", search_terms: ['sports'])
-    )
-    12.times do
-      @classroom = Classroom.create!(
-        name: Faker::Music.band,
-        description: "Class description",
-        category: %w[Music Fitness Languages Hiking Gardening].sample,
-        start_date: Faker::Date.in_date_period(month: 2),
-        end_date: Faker::Date.in_date_period(month: 3),
-        address: Faker::Address.full_address,
-        max_number_of_partecipants: rand(1..10),
-        language: Faker::Nation.language,
-        level: levels.sample,
-        time: rand(1..6),
-        user: user,
-        list: @list
-      )
-    end
-  end
-
-  12.times do
-    Skill.create!(
-=======
     @classroom = Classroom.create!(
       name: Faker::Music.band,
       description: "Class description",
@@ -72,7 +45,6 @@ list_category = ["Music", "Web Development", "Photography", "Animation", "Graphi
       address: Faker::Address.full_address,
       max_number_of_partecipants: rand(1..10),
       language: Faker::Nation.language,
->>>>>>> Stashed changes
       level: levels.sample,
       time: rand(1..6),
       user: user,
