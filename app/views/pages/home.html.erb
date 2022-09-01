@@ -1,37 +1,51 @@
-<div class="main-container">
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1543069752-7148d755b347?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80);">
-    <div class="container">
-      <h1>Shared Goal</h1>
-      <p>
-        <span data-controller="typed-js"></span>
-      </p>
-      <a class="btn" href="#">Join now</a>
+<div class="banner-home">
+  <div class="banner-pic"><%= image_tag("Banner.svg") %></div>
+  <div class="banner-content">
+    <div class="title">
+      <h3>We improve together</h3>
+      <h3>because we have a </h3>
+      <h1><strong>Shared Goal</strong></h1>
+      <br>
+      <br>
+      <br>
+      <br>
     </div>
-  </div>
-  <div class= "popcat">
-    <h2> Popular Categories </h2>
-  </div>
-  <div class="cards">
-    <div class="card">
+    <div class="intro">
+      <h5>Learning or improving skills while making new friends. We are here to make learning experience fun again.</h5>
       <br>
-      <h2> Clarinet </h2>
       <br>
-      <p><strong> Put the description </strong></p>
-      <a class="btn" href="/lists ">See them all</a>
-    </div>
-
-    <div class="card">
-      <h2> Coding </h2>
-      <br>
-      <p><strong> Put the description </strong></p>
-      <a class="btn" href="/lists ">See them all</a>
-    </div>
-
-    <div class="card">
-      <h2> Caligraphy </h2>
-      <br>
-      <p><strong> Put the description </strong></p>
-      <a class="btn" href="/lists ">See them all</a>
+      <button><%= link_to "Join today!", root_path %></button>
     </div>
   </div>
 </div>
+
+<div class="recommendation">
+  <div class="card-container">
+    <div class="card-one">
+      <div class="card-cotent">
+        <h5>Not feeling motivated to self-improvement? </h5>
+        <p>Here you can always find buddies to learn & have fun with!</p>
+      </div>
+      <h4 class="cardbutton"><%= link_to "Start your class" %></h4>
+    </div>
+    <div class="card-two">
+      <div class="card-cotent">
+        <h5>Not knowing what you would like to learn next?</h5>
+        <p>We have a great selection of things that you might want to check out!</p>
+       </div>
+      <h4 class="cardbutton"><%= link_to "Our Categories" %></h4>
+    </div>
+  </div>
+  <div class="tetimonies">
+    <div class="testimony-one">
+      <p>“Best learning experience always comes when you are learning with  friends, this app gives me so much motivation!</p>
+      <%= image_tag("profilehome1.jpg")%>
+    </div>
+    <div class="testimony-two">
+      <p>“This could be my favorite learning/social platform ever!</p>
+      <%= image_tag("profilehome.jpg")%>
+    </div>
+  </div>
+</div>
+
+<div class="layer"></div>
