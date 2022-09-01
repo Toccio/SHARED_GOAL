@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :classrooms, only: [ :edit, :update, :destroy ]
   resources :bookings, only: :destroy
 
-  resources :chatrooms, only: :show do
+  resources :chatrooms, only: [:new, :create, :show ] do
     resources :messages, only: :create
   end
 end

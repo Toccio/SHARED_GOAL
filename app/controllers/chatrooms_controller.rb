@@ -1,12 +1,18 @@
 class ChatroomsController < ApplicationController
+
   def new
     @chatroom = Chatroom.new
+    authorize @chatroom
   end
 
   def create
     @chatroom = Chatroom.new(set_chatroom)
     authorize @chatroom
-    @chatroom.save
+    if @chatroom.save
+      redirect_to chatroom_path(@chatroom)
+    else
+      render :new
+    end
   end
 
   def show
