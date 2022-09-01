@@ -3,7 +3,7 @@
   background-color: #CBB26B;
   text-align: justify;
   margin: 0 auto;
-  padding: 0px 50px 50px 50px;
+  padding: 30px 30px 30px 30px;
   border-radius: 5px;
   margin-top: 20px;
   margin-bottom: 70px;
@@ -37,16 +37,18 @@
   width: 100%;
   background: #4D04C4;
   color: white;
+  transform: scale(1.031);
 }
 
 
 #btn {
-  width: 75%;
+  width: 100%;
   text-align: center;
   margin: auto;
+
 }
 
-.back-button {
+.navigate-button {
   color: #ffffff;
   padding: 8px 16px;
   border-radius: 4px;
@@ -55,13 +57,14 @@
   width: fit-content;
   align-self: start;
   text-decoration: none;
-  margin-left: 10px;
-  margin-top: 10px;
+  margin: 10px;
 }
 
-.back-button:hover {
+.navigate-button:hover {
   background: #4D04C4;
   color: white;
+  transform: scale(1.01);
+
 }
 
 #h2 {
