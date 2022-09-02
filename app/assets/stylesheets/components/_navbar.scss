@@ -5,6 +5,8 @@
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+  justify-content: space-between;
+
 }
 
 .navbar-brand img {
@@ -12,4 +14,17 @@
 }
 .nav-item {
   list-style: none;
+}
+
+.collapse {
+  justify-content: space-between;
+
+}
+
+.d-flex{
+  margin-right: 280px;
+}
+
+#query {
+  width: 300px
 }
