@@ -8,7 +8,7 @@
       <div class="card">
         <h2> <%= classroom.name %> </h2>
         <p> <%= classroom.description %> </p>
-        <%= link_to "Check it out", "#",  class: "btn"  %>
+        <%= link_to "Check it out", list_classrooms_path(@list, @classroom), class: "btn"  %>
       </div>
     <%end%>
   </div>
