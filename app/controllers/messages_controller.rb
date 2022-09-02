@@ -8,19 +8,11 @@ class MessagesController < ApplicationController
        #message needs a user
        @message.user = current_user
        if @message.save
-
-      #   ActionCable.server.broadcast("chatroom-#{@chatroom.id}",
-      #     message:render_to_string(partial: "message", locals: {message: @message})
-      #     sender_id: @message.user.id
-      # )
-
-      ChatroomChannel.broadcast_to(
-        @chatroom,
-        message: render_to_string(partial: "message", locals: { message: @message }),
-        sender_id: @message.user.id
-      )
-
-        redirect_to chatroom_path(@chatroom, anchor: "message-#{@message.id}")
+        ChatroomChannel.broadcast_to(
+          @chatroom,
+          render_to_string(partial: "message", locals: {message: @message})
+        )
+        head :ok
       else
         render 'chatrooms/show'
       end
