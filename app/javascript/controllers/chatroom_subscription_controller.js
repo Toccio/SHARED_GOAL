@@ -1,4 +1,4 @@
-import { Controller } from "stimulus"
+import { Controller } from "@hotwired/stimulus"
 import consumer from '../channels/consumer'
 
 export default class extends Controller {
@@ -8,7 +8,8 @@ export default class extends Controller {
     this.channel = consumer.subscriptions.create(
       { channel: "ChatroomChannel", id: this.chatroomIdValue },
       { received: (message) => {
-        this.element.insertAdjacentHTML('beforeend', message)
+        console.log(message.message);
+        this.element.insertAdjacentHTML('beforeend', message.message)
         this.element.scrollTop = this.element.scrollHeight
       }}
     )

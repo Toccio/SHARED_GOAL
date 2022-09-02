@@ -1,24 +1,17 @@
 
 .show-container {
-  background-color: #7389ae;
+  background-color: #CBB26B;
   text-align: justify;
   margin: 0 auto;
-  padding: 0px 50px 50px 50px;
+  padding: 30px 30px 30px 30px;
   border-radius: 5px;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 20px;
+  margin-bottom: 70px;
     .more-how {
       font-family: Georgia, 'Times New Roman', Times, serif;
     }
 
 
-}
-
-.fulmine {
-  width: 100%;
-  height: 100%;
-  margin-top: 13px;
-  margin-right: 20px;
 }
 
 .button {
@@ -44,12 +37,36 @@
   width: 100%;
   background: #4D04C4;
   color: white;
+  transform: scale(1.031);
 }
 
 
 #btn {
-  width: 75%;
+  width: 100%;
   text-align: center;
   margin: auto;
 
+}
+
+.navigate-button {
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 4px;
+  background: #160d1c;
+  transition: background 0.3s ease;
+  width: fit-content;
+  align-self: start;
+  text-decoration: none;
+  margin: 10px;
+}
+
+.navigate-button:hover {
+  background: #4D04C4;
+  color: white;
+  transform: scale(1.01);
+
+}
+
+#h2 {
+  color: black;
 }

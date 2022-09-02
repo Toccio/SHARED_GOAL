@@ -1,11 +1,15 @@
+
 <%=link_to "Let's go back", lists_path, class: "button" %>
 <div class="show-container container w-100 pt-3">
+
+<%=link_to "Let's go back", lists_path, class: "navigate-button" %>
+<div class="show-container container w-100">
 
   <div class="container ">
       <div class="row">
         <div class="col-12 col-lg-6">
           <div class="border-bottom">
-            <h2><strong> <%= @classroom.name %> </strong></h2>
+            <h2 id="h2"><strong> <%= @classroom.name %> </strong></h2>
           </div>
           <div class="more-info pt-3 border-bottom">
             <h5 class="more-how"><strong> What we will learn </strong></h5>
@@ -32,20 +36,10 @@
           </div>
         </div>
         <div class="col-12 col-lg-6">
-          <%= cl_image_tag @classroom.photo.key, height: 300, width: 400, crop: :fill %>
+          <%= cl_image_tag @classroom.photo.key, height: 586, width: 586, crop: :fill %>
         </div>
-
       </div>
     </div>
   </div>
-
-
-
-
-
-
-
-
-
-  <%# <%= link_to "delete", classroom_path(@classroom), data: { confirm: "Are you sure?" }, method: :delete %>
+  <%= link_to "Delete", classroom_path(@classroom), class: "navigate-button", data: { confirm: "Are you sure?" }, method: :delete%>
 </div>
