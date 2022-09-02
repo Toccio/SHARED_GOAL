@@ -1,6 +1,18 @@
+<div class="main-container">
+  <div class="page-title">
+    <h1>All Classrooms</h1>
+  </div>
+  <div class="cards">
+    <% @classrooms.each do |classroom| %>
+
+      <div class="card">
+        <h2> <%= classroom.name %> </h2>
+        <br>
+        <p><strong> <%= classroom.description %> </strong></p>
+      <%= link_to "Check it out", list_classroom_path(@list, classroom), class: "btn"  %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
 <%link_to root_path %>
-<br>
-<% @classrooms.each do |classroom| %>
-<%= classroom.name%>
-<%= classroom.description %>
-<% end %>
