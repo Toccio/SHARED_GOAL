@@ -19,8 +19,9 @@
 
 .banner-content {
   position: absolute;
-  top: 10%;
+  top: 5%;
   left: 53%;
+  z-index: 1;
 }
 
 .title {
@@ -39,7 +40,7 @@
   text-shadow: 4px 4px 4px #D8EA11;
   transform: rotate(-3deg);
   left: -5%;
-  top: 26%;
+  top: 28%;
   width: 100%;
 }
 
@@ -71,7 +72,7 @@ button a {
 
 button:hover {
   background-color: #F3EA00;
-  box-shadow: 0 0 10px #F3EA00, 0 0 40px #F3EA00,0 0 80px #F3EA00;
+  box-shadow: 0 0 10px #F3EA00, 0 0 15px #F3EA00,0 0 25px #F3EA00;
 }
 
 button:hover a {
@@ -80,6 +81,7 @@ button:hover a {
 
 .recommendation {
   display: flex;
+  margin-top: 80px;
   margin-bottom: 40px;
 }
 
