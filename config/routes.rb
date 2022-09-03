@@ -6,8 +6,10 @@ Rails.application.routes.draw do
   resources :users, only: :show
 
   resources :lists do
-    resources :classrooms, only: [:show, :index, :new, :create] do
-      resources :bookings, only: [:show, :index, :new, :create]
+    resources :classroom_categories, only: [:index] do
+      resources :classrooms, only: [:show, :index, :new, :create] do
+        resources :bookings, only: [:show, :index, :new, :create]
+      end
     end
   end
   resources :classrooms, only: [ :edit, :update, :destroy ]
