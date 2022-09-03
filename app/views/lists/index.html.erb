@@ -1,17 +1,25 @@
-<div class="main-container">
-  <div class="page-title">
-    <h1>All Categories</h1>
+<div class="index-content">
+  <div class="sidebar">
+    <div class="text"><%= link_to "Categories", lists_path %></div>
+    <ul>
+      <li><%= link_to "Music" %></li>
+      <li><%= link_to "Fitness" %></li>
+      <li><%= link_to "Gardening" %></li>
+      <li><%= link_to "Computer Science" %></li>
+      <li><%= link_to "Whatever" %></li>
+    </ul>
   </div>
-  <div class="cards">
-    <% @lists.each do |list| %>
-      <div class="card">
-        <h2> <%= list.name %> </h2>
-        <br>
-        <p><strong> <%= list.description %> </strong></p>
-      <%= link_to "Check it out", list_path(list.id), class: "btn"  %>
-      </div>
-    <% end %>
+
+  <div class="category-cards">
+    <div class="cards-title"><h1><strong>Categories</strong></h1></div>
+    <div class="cards-display">
+      <% @lists.each do |list| %>
+        <div class="index-card">
+          <h2> <%= list.name %> </h2>
+          <br>
+          <%= link_to "Check it out"  %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
-
-<%# style="background-image: <%= list.photo %>

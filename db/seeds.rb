@@ -9,7 +9,6 @@ Classroom.destroy_all
 Booking.destroy_all
 puts "Database created 👌"
 
-
 # instruments = {
 #   Guitar: "https://images.unsplash.com/photo-1510915361894-db8b60106cb1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Z3VpdGFyfGVufDB8fDB8fA%3D%3D&w=1000&q=80",
 #   Piano: "https://media.istockphoto.com/photos/favorite-classical-musicclose-up-view-of-gentle-female-hands-playing-picture-id1129332575?k=20&m=1129332575&s=612x612&w=0&h=DTpOnAdbtHwbC60LMOpSOlMOogOPg8wyyIRvJzwJtc8=",
@@ -24,7 +23,7 @@ user = User.create!(
   password:"123456",
   first_name: Faker::Games::Heroes.name,
   last_name: Faker::Creature::Bird.common_family_name,
-  nickname: Faker::Games::Pokemon.name,
+  nickname: Faker::Games::Pokemon.name
 )
 
 list_category = [

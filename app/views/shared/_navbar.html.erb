@@ -14,7 +14,8 @@
       </div>
       <div class="navbar-profile">
         <div class="profile-image">
-          <%= image_tag("https://kitt.lewagon.com/placeholder/users/#{current_user.nickname}", class: 'profile-image') %>
+          <%# <%= image_tag("https://kitt.lewagon.com/placeholder/users/#{current_user.nickname}", class: 'profile-image')  %>
+          <%= image_tag("profilehome1.jpg", class: 'profile-image') %>
         </div>
         <div class="profile-items">
           <ul>
@@ -28,14 +29,14 @@
     </div>
 
     <script>
-      const search = document.querySelector('.navbar-search');
-      const icon = document.querySelector('.search-image');
-      const profile = document.querySelector('.navbar-profile')
-      const image = document.querySelector('.profile-image')
+      var search = document.querySelector('.navbar-search');
+      var icon = document.querySelector('.search-image');
+      var profile = document.querySelector('.navbar-profile')
+      var image = document.querySelector('.profile-image')
       icon.onclick = function() {
         search.classList.toggle('active');
       };
-      image.onclick = function () {
+      image.onclick = function() {
         profile.classList.toggle('active')
       };
     </script>
