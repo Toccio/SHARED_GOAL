@@ -1,0 +1,9 @@
+<div class="small-gray row justify-content-center">
+  <div class="col-6">
+    <%= simple_form_for @chatroom do |f| %>
+    <br>
+    <%= f.input_field :name,  placeholder:"Chatroom name", class: "name-form" %>
+    <%= f.button :submit, "Lets chat!", class: "chabun" %>
+    <% end %>
+  </div>
+</div>
