@@ -1,6 +1,6 @@
 .chatroom {
   background: white;
-  width: 75%;
+  width: 125%;
   margin-top: 9px;
   margin-bottom: 9px;
   border-radius: 5px;
@@ -37,4 +37,37 @@ margin-bottom: 0px !important;
 width: 90%;
 height: 40px;
 margin-right: 5px !important;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-gap: 20px;
+}
+
+.open-chatrooms {
+  height: calc(100vh - 75px);
+  background: white;
+  width: 100%;
+  margin-top: 9px;
+  margin-bottom: 9px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+
+}
+
+.side-options {
+  height: calc(100vh - 75px);
+  width: 75%;
+  margin-top: 9px;
+  margin-bottom: 9px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+
 }
