@@ -1,6 +1,6 @@
 class Classroom < ApplicationRecord
   belongs_to :user
-  belongs_to :list
+  belongs_to :classroom_category
   has_many :bookings, dependent: :destroy
   validates :name, presence: true
   validates :description, presence: true
@@ -9,5 +9,4 @@ class Classroom < ApplicationRecord
 
   include PgSearch::Model
   multisearchable against: [:name, :description]
-
 end

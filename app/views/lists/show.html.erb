@@ -1,14 +1,13 @@
 <div class="main-container">
+<h1>Instruments</h1>
   <div class="navigation pt-3">
-    <%= link_to "Create class", new_list_classroom_path(@list), class: "btn"%>
     <%=link_to "Lets go back", lists_path, class: "btn" %>
   </div>
   <div class="cards">
-    <% @classrooms.each do |classroom| %>
+    <% @classroom_categories.each do |classroom_category| %>
       <div class="card">
-        <h2> <%= classroom.name %> </h2>
-        <p> <%= classroom.description %> </p>
-        <%= link_to "Check it out", list_classrooms_path(@list, @classroom), class: "btn"  %>
+        <h2> <%= classroom_category.name %> </h2>
+        <%= link_to "Check it out", classroom_category_path(classroom_category), class: "btn"  %>
       </div>
     <%end%>
   </div>

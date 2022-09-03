@@ -27,7 +27,7 @@ class ClassroomsController < ApplicationController
     @classroom = Classroom.new(set_params)
     authorize @classroom
     @classroom.user = current_user
-    @classroom.list = @list
+    # @classroom.list = @list
     if @classroom.save
       redirect_to list_classroom_path(@list, @classroom)
     else
@@ -40,13 +40,13 @@ class ClassroomsController < ApplicationController
 
   def update
     @classroom.update(set_params)
-    @list = @classroom.list
+    # @list = @classroom.list
     redirect_to list_classroom_path(@list, @classroom)
   end
 
   def destroy
     @classroom = policy_scope(Classroom).find(params[:id])
-    @list = @classroom.list
+    # @list = @classroom.list
     @classroom.destroy
     redirect_to list_classrooms_path(@list)
   end
@@ -59,7 +59,6 @@ class ClassroomsController < ApplicationController
   end
 
   def set_params
-    params.require(:classroom).permit(:name, :description, :category, :start_date, :end_date, :max_number_participants,
-                                      :level, :language, :time, :address, :photo)
+    params.require(:classroom).permit(:name, :description, :category, :start_date, :end_date, :max_number_participants,:level, :language, :time, :address, :photo)
   end
 end

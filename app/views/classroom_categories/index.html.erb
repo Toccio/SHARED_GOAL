@@ -1,0 +1,14 @@
+<div class="main-container">
+  <div class="page-title">
+    <h1>Guitars Categories</h1>
+  </div>
+  <div class="cards">
+    <% @classroom_categories.each do |classroom_categorie| %>
+      <div class="card">
+        <h2> <%= classroom_categorie.name %> </h2>
+        <br>
+      <%= link_to "Check it out", classroom_category_path(classroom_categorie.id), class: "btn"  %>
+      </div>
+    <% end %>
+  </div>
+</div>

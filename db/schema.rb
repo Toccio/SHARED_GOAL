@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_03_102617) do
+ActiveRecord::Schema.define(version: 2022_09_03_122415) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -78,11 +78,11 @@ ActiveRecord::Schema.define(version: 2022_09_03_102617) do
     t.string "level"
     t.integer "time"
     t.bigint "user_id", null: false
-    t.bigint "list_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "category"
-    t.index ["list_id"], name: "index_classrooms_on_list_id"
+    t.bigint "classroom_category_id", null: false
+    t.index ["classroom_category_id"], name: "index_classrooms_on_classroom_category_id"
     t.index ["user_id"], name: "index_classrooms_on_user_id"
   end
 
@@ -143,7 +143,7 @@ ActiveRecord::Schema.define(version: 2022_09_03_102617) do
   add_foreign_key "bookings", "classrooms"
   add_foreign_key "bookings", "users"
   add_foreign_key "classroom_categories", "lists"
-  add_foreign_key "classrooms", "lists"
+  add_foreign_key "classrooms", "classroom_categories"
   add_foreign_key "classrooms", "users"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"

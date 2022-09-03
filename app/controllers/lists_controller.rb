@@ -9,7 +9,7 @@ class ListsController < ApplicationController
 
   def show
     @list = policy_scope(List).find(params[:id])
+    @classroom_categories = @list.classroom_categories
     authorize @list
-    @classrooms = @list.classrooms
   end
 end

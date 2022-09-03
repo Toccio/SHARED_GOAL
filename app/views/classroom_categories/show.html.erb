@@ -1,0 +1,15 @@
+<div class="main-container">
+<h1>Music categories</h1>
+  <div class="navigation pt-3">
+    <%=link_to "Lets go back", lists_path, class: "btn" %>
+  </div>
+  <div class="cards">
+    <% @classrooms.each do |classroom| %>
+      <div class="card">
+        <h2> <%= classroom.name %> </h2>
+        <p><%= classroom.description %></p>
+        <%= link_to "Check it out", classroom_path, class: "btn"  %>
+      </div>
+    <%end%>
+  </div>
+</div>
