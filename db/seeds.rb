@@ -30,7 +30,7 @@ list_category = [
   "Music", "Web Development", "Photography", "Animation",
   "Graphic Design", "Illustration", "Personal Development", "Creative Writing",
   "Film & Video", "UI/UX Design", "Fine Art", "Marketing", "Leadership & Management",
-  "Freelance & Entrepreneurship","Business Analytics"
+  "Entrepreneurship","Business Analytics"
 ]
 
 instruments = [
