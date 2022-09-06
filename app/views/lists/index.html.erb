@@ -2,24 +2,75 @@
   <div class="sidebar">
     <div class="text"><%= link_to "Categories", lists_path %></div>
     <ul>
-      <li><%= link_to "Music" %></li>
-      <li><%= link_to "Fitness" %></li>
-      <li><%= link_to "Gardening" %></li>
-      <li><%= link_to "Computer Science" %></li>
-      <li><%= link_to "Miscellaneous" %></li>
+      <% @lists.each do |i| %>
+        <li><%= link_to i.name %></li>
+      <% end %>
     </ul>
   </div>
 
   <div class="category-cards">
     <div class="cards-title"><h1><strong>Categories</strong></h1></div>
     <div class="cards-display">
-      <% @lists.each do |list| %>
-        <div class="index-card">
-          <h2> <%= list.name %> </h2>
-          <br>
-          <%= link_to "Check it out"  %>
+        <div class="music index-card">
+          <%= link_to "",  class: "card-link"%>
+          <h2> Music </h2>
         </div>
-      <% end %>
+        <div class="web index-card">
+          <%= link_to "",  class: "card-link"%>
+          <h2> Web Development </h2>
+        </div>
+        <div class="phtography index-card">
+          <%= link_to "",  class: "card-link"%>
+          <h2> Photography </h2>
+        </div>
+        <div class="animation index-card">
+          <%= link_to "",  class: "card-link"%>
+          <h2> Animation </h2>
+        </div>
+        <div class="graphic index-card">
+          <%= link_to "",  class: "card-link"%>
+          <h2> Graphic Design </h2>
+        </div>
+        <div class="illustration index-card">
+          <%= link_to "",  class: "card-link"%>
+          <h2> Illustration </h2>
+        </div>
+        <div class="personal index-card">
+          <%= link_to "",  class: "card-link"%>
+          <h2> Personal Development </h2>
+        </div>
+        <div class="writing index-card">
+          <%= link_to "",  class: "card-link"%>
+          <h2> Creative Writing </h2>
+        </div>
+        <div class="film index-card">
+          <%= link_to "",  class: "card-link"%>
+          <h2> Film & Video </h2>
+        </div>
+        <div class="uiux index-card">
+          <%= link_to "",  class: "card-link"%>
+          <h2> UI/UX Design </h2>
+        </div>
+        <div class="art index-card">
+          <%= link_to "",  class: "card-link"%>
+          <h2> Fine Art </h2>
+        </div>
+        <div class="marketing index-card">
+          <%= link_to "",  class: "card-link"%>
+          <h2> Marketing </h2>
+        </div>
+        <div class="leadership index-card">
+          <%= link_to "",  class: "card-link"%>
+          <h2> Leadership & Management </h2>
+        </div>
+        <div class="entrepreneurship index-card">
+          <%= link_to "",  class: "card-link"%>
+          <h2> Entrepreneurship </h2>
+        </div>
+        <div class="business index-card">
+          <%= link_to "",  class: "card-link"%>
+          <h2> Business Analytics </h2>
+        </div>
     </div>
   </div>
 </div>
