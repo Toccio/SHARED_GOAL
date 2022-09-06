@@ -9,7 +9,7 @@
         <h2> <%= classroom.name %> </h2>
         <br>
         <p><strong> <%= classroom.description %> </strong></p>
-      <%= link_to "Check it out", list_classroom_path(@list, classroom), class: "btn"  %>
+      <%= link_to "Check it out", classroom_path(classroom), class: "btn"  %>
       </div>
     <% end %>
   </div>

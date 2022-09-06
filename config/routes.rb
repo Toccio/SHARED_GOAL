@@ -5,14 +5,14 @@ Rails.application.routes.draw do
 
   resources :users, only: :show
 
-  resources :lists do
-    resources :classroom_categories, only: [:index] do
-      resources :classrooms, only: [:index, :new, :create] do
-        resources :bookings, only: [:index, :new, :create]
-      end
+  resources :lists
+
+  resources :classroom_categories, only: [:show] do
+    resources :classrooms, only: [:index, :new, :create] do
+      resources :bookings, only: [:index, :new, :create]
     end
   end
-  resources :classroom_categories, only: [:show]
+
   resources :classrooms, only: [:edit, :update, :destroy, :show]
   resources :bookings, only: [:destroy, :show]
 

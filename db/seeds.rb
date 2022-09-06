@@ -73,13 +73,14 @@ i = 0
   y = 0
     15.times do
       @classroom_category = ClassroomCategory.create!(
-        name: instruments[y],
+        name: guitars[y],
+        instrument: instruments[y],
         list: @list
       )
       j = 0
       15.times do
         @classroom = Classroom.create!(
-          name: guitars[j],
+          name: class_name[j],
           description: creators[j],
           category: %w[Music Fitness Languages Hiking Gardening].sample,
           start_date: Faker::Date.in_date_period(month: 2),

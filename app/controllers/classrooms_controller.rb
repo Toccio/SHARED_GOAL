@@ -3,7 +3,6 @@ class ClassroomsController < ApplicationController
 
   def index
     @classrooms = policy_scope(Classroom)
-    @list = policy_scope(List).find(params[:list_id])
     # if params[:query].present?
     #   @classrooms = Classroom.search(params[:query])
     # else
@@ -16,23 +15,26 @@ class ClassroomsController < ApplicationController
 
   def new
     #@list = List.find(params[:list_id])
-    @list = policy_scope(List).find(params[:list_id])
+    @classroom_category = ClassroomCategory.find(params[:classroom_category_id])
+
     @classroom = Classroom.new
     authorize @classroom
     # @classroom.user = current_user
   end
 
   def create
-    @list = policy_scope(List).find(params[:list_id])
+    @classroom_category = ClassroomCategory.find(params[:classroom_category_id])
+    # @classroom_category = ClassroomCategory.new
     @classroom = Classroom.new(set_params)
-    authorize @classroom
     @classroom.user = current_user
+    @classroom.classroom_category = @classroom_category
     # @classroom.list = @list
-    if @classroom.save
-      redirect_to list_classroom_path(@list, @classroom)
+    if @classroom.save!
+      redirect_to  classroom_category_classrooms_path(@classroom_category)
     else
       render :new
     end
+    authorize @classroom
   end
 
   def edit

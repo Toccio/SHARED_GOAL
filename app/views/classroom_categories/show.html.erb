@@ -4,12 +4,12 @@
     <%=link_to "Lets go back", lists_path, class: "btn" %>
   </div>
   <div class="cards">
-    <% @classrooms.each do |classroom| %>
+    <% @classroom_categories.each do |classroom_categorie| %>
       <div class="card">
-        <h2> <%= classroom.name %> </h2>
-        <p><%= classroom.description %></p>
-        <%= link_to "Check it out", classroom_path, class: "btn"  %>
+        <h2> <%= classroom_categorie.name %> </h2>
+        <br>
+      <%= link_to "Check it out", classrooms_path, class: "btn"  %>
       </div>
-    <%end%>
+    <% end %>
   </div>
 </div>
