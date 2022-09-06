@@ -1,39 +1,49 @@
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-6">
-      <h1>My profile</h1>
+<div class="show-container container w-100 pt-3">
 
-      <%# <% Booking.all.each do |booking| %>
-        <%# <%= current_user.id = booking.user_id %>
-      <%# <% end %>
+<%=link_to "Let's go back", lists_path, class: "navigate-button" %>
+<div class="show-container container w-100">
 
-      <% @classrooms.each do |classroom| %>
-        <% if !classroom.bookings.empty? %>
-          <%= classroom.name %>
-          <% classroom.bookings.each do |booking| %>
-            <%= booking.status %>
-          <% end %>
-        <% end %>
-      <% end %>
+  <div class="container ">
+      <div class="row">
+        <div class="col-12 col-lg-6">
+          <div class="border-bottom">
+            <h1>My profile</h1>
+          </div>
+
+              <div class="row">
+                <h2> Incoming bookings</h2>
+
+                <% @classrooms.each do |classroom| %>
+                  <% if !classroom.bookings.empty? %>
+                    <%= classroom.name %>
+                    <% classroom.bookings.each do |booking| %>
+                      <p><%= booking.user.email %></p>
+                      <p><%= booking.status %></p>
+                    <% end %>
+                  <% end %>
+                <% end %>
+              </div>
+              <div class="row">
+                <h2>Outcoming bookings</h2>
+
+                <% @out_bookings.each do |out_booking| %>
+                  <%= out_booking.classroom.name %>
+                  <%= out_booking.status %>
+                <% end %>
+
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class= "row" id="btn">
+          <%=link_to "Join now", "#", class: "join-button" %>
+          </div>
+        </div>
+        <div class="col-12 col-lg-6">
+
+        </div>
+      </div>
     </div>
   </div>
+  <%# <%= link_to "Delete", classroom_path(@classroom), class: "navigate-button", data: { confirm: "Are you sure?" }, method: :delete%>
 </div>
-<h2> Incoming bookings</h2>
-
-<% @classrooms.each do |classroom| %>
-  <% if !classroom.bookings.empty? %>
-    <%= classroom.name %>
-    <% classroom.bookings.each do |booking| %>
-      <p><%= booking.user.email %></p>
-      <p><%= booking.status %></p>
-    <% end %>
-  <% end %>
-<% end %>
-
-<h2>Outcoming bookings</h2>
-
-<% @out_bookings.each do |out_booking| %>
-  <%= out_booking.classroom.name %>
-  <%= out_booking.status %>
-<% end %>
-
