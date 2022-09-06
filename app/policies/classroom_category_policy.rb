@@ -5,6 +5,7 @@ class ClassroomCategoryPolicy < ApplicationPolicy
       scope.all
     end
   end
+
   def show?
     true
   end
