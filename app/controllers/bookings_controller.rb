@@ -11,7 +11,7 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @list = policy_scope(List).find(params[:list_id])
+    # @list = policy_scope(List).find(params[:list_id])
     @classroom = policy_scope(Classroom).find(params[:classroom_id])
     @booking = Booking.new
     authorize @booking

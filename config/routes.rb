@@ -5,15 +5,18 @@ Rails.application.routes.draw do
 
   resources :users, only: :show
 
-  resources :lists do
-    resources :classrooms, only: [:show, :index, :new, :create] do
-      resources :bookings, only: [:show, :index, :new, :create]
+  resources :lists
+
+  resources :classroom_categories, only: [:show] do
+    resources :classrooms, only: [:index, :new, :create] do
+      resources :bookings, only: [:index, :new, :create]
     end
   end
-  resources :classrooms, only: [ :edit, :update, :destroy ]
-  resources :bookings, only: :destroy
 
-  resources :chatrooms, only: [:new, :create, :show ] do
+  resources :classrooms, only: [:edit, :update, :destroy, :show]
+  resources :bookings, only: [:destroy, :show]
+
+  resources :chatrooms, only: [:new, :create, :show] do
     resources :messages, only: :create
   end
 end
