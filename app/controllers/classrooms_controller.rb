@@ -2,6 +2,9 @@ class ClassroomsController < ApplicationController
   before_action :find_params, only: [:show, :edit, :update, :destroy]
 
   def index
+    @classrooms = policy_scope(Classroom)
+    @list = policy_scope(List).find(params[:list_id])
+    @lists = policy_scope(List).all
     if params[:query].present?
       @classrooms = Classroom.search_by_name_and_description(params[:query])
     else
