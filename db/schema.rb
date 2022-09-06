@@ -10,7 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 2022_09_06_170549) do
 
   # These are extensions that must be enabled in order to support this database
@@ -84,9 +83,8 @@ ActiveRecord::Schema.define(version: 2022_09_06_170549) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "category"
     t.bigint "classroom_category_id", null: false
-    t.index ["classroom_category_id"], name: "index_classrooms_on_classroom_category_id"
     t.string "photo"
-    t.index ["list_id"], name: "index_classrooms_on_list_id"
+    t.index ["classroom_category_id"], name: "index_classrooms_on_classroom_category_id"
     t.index ["user_id"], name: "index_classrooms_on_user_id"
   end
 

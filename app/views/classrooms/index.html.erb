@@ -15,14 +15,14 @@
       <div class="crt-button"><%= link_to "Create a classroom" %></div>
     </div>
     <div class="cards-display">
+      <% @classrooms.each do |classroom| %>
         <div class="index-card">
-          <% @classrooms.each do |classroom| %>
-            <h2> <%= classroom.name %> </h2>
-            <br>
-            <p><strong> <%= classroom.description %> </strong></p>
-            <%= link_to "Check it out", list_classroom_path(@list, classroom) %>
-           <% end %>
+          <%= link_to "",  class: "card-link"%>
+          <h2> <%= classroom.name %> </h2>
+          <br>
+          <p><strong> <%= classroom.description %> </strong></p>
         </div>
+      <% end %>
     </div>
   </div>
 </div>
