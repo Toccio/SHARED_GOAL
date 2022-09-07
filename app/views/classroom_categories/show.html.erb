@@ -1,15 +1,22 @@
-<div class="main-container">
-<h1>Music categories</h1>
-  <div class="navigation pt-3">
-    <%=link_to "Lets go back", lists_path, class: "btn" %>
+<div class="index-content">
+  <div class="sidebar">
+    <div class="text"><%= link_to "Categories", lists_path %></div>
+    <ul>
+      <% @lists.each do |i| %>
+        <li><%= link_to i.name %></li>
+      <% end %>
+    </ul>
   </div>
-  <div class="cards">
-    <% @classroom_categories.each do |classroom_categorie| %>
-      <div class="card">
-        <h2> <%= classroom_categorie.name %> </h2>
-        <br>
-      <%= link_to "Check it out",  classroom_category_classrooms_path(classroom_categorie,@classroom ), class: "btn"  %>
-      </div>
-    <% end %>
+
+  <div class="category-cards">
+    <div class="cards-title"><h1><strong>Music(dynamic)</strong></h1></div>
+    <div class="cards-display">
+      <% @classroom_categories.each do |classroom_category| %>
+        <div class="index-card">
+          <%= link_to "", classroom_category_path,  class: "card-link"%>
+          <h2> <%= classroom_category.instrument %> </h2>
+        </div>
+      <%end%>
+    </div>
   </div>
 </div>
