@@ -1,6 +1,6 @@
 <div class="grid-container">
   <div class="open-chatrooms">
-  <div class="open-chats">
+    <div class="sidebar">
       <ul>
         <% @chatrooms.each do |chatroom| %>
         <li><%= link_to chatroom.name, chatroom_path(chatroom) %></li>
