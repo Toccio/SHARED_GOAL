@@ -15,15 +15,13 @@
       <div class="crt-button"><%= link_to "Create a classroom",  new_classroom_category_classroom_path(@classroom_category, @classroom)  %></div>
     </div>
     <div class="cards-display">
-      <% @classrooms.each do |classroom| %>
         <div class="index-card">
           <% @classrooms.each do |classroom| %>
-            <h2> <%= classroom.name %> </h2>
+            <h2> <%= link_to classroom.name, classroom_path(classroom) %> </h2>
             <br>
             <p><strong> <%= classroom.description %> </strong></p>
            <% end %>
         </div>
-      <% end %>
     </div>
   </div>
 </div>

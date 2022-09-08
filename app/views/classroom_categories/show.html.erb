@@ -13,8 +13,8 @@
     <div class="cards-display">
       <% @classroom_categories.each do |classroom_category| %>
         <div class="index-card">
-          <%= link_to "", classroom_category_path,  class: "card-link"%>
-          <h2> <%= classroom_category.instrument %> </h2>
+      <%= link_to "Check it out",  classroom_category_classrooms_path(classroom_category,@classroom ), class: "btn"  %>
+          <h2> <%= classroom_category.name %> </h2>
         </div>
       <%end%>
     </div>
