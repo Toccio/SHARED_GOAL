@@ -62,6 +62,8 @@ creators = [
   "Sen Cao", "Marcin Niemiec", "Filippos Lavrentidis", "Xiǎo Xióng","Federica Di Vincenzo",
   "Super Mario", "André R. Ferrer", "Jess Silva Carvalho", "Daniel Leonardo Hong", "Lusa Severo"
 ]
+
+
 i = 0
 15.times do
   @list = List.create!(
@@ -71,6 +73,7 @@ i = 0
   )
   y = 0
     15.times do
+      # ClassroomCategory.destroy(@classroom_category),
       @classroom_category = ClassroomCategory.create!(
         name: guitars[y],
         instrument: instruments[y],

@@ -1,8 +1,12 @@
 <div class="grid-container">
   <div class="open-chatrooms">
-  <br>
-  <br>
-  -----Todo: Open Chatrooms-----
+  <div class="open-chats">
+      <ul>
+        <% @chatrooms.each do |chatroom| %>
+        <li><%= link_to chatroom.name, chatroom_path(chatroom) %></li>
+        <% end %>
+      </ul>
+    </div>
   </div>
   <div class="container chatroom"
     data-controller="chatroom-subscription"

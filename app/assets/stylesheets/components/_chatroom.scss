@@ -62,6 +62,9 @@ margin-right: 5px !important;
   flex-direction: column;
   justify-content: space-between;
   flex-grow: 1;
+  .open-chats {
+    margin-top: 10px;
+  }
 
 }
 
@@ -76,4 +79,24 @@ margin-right: 5px !important;
   justify-content: space-between;
   flex-grow: 1;
 
+}
+
+// Open-chat
+
+.open-chats ul li{
+  list-style: none;
+
+}
+
+.open-chats li {
+  margin-top: 16px;
+
+}
+
+.open-chats a {
+  font-weight: bolder;
+  font-size: large;
+  width: auto;
+  text-decoration: none;
+  color: #120127;
 }
