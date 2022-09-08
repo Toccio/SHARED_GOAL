@@ -1,6 +1,7 @@
 class ClassroomCategoriesController < ApplicationController
 
   def index
+    @lists = policy_scope(List).all
     @classroom_categories = policy_scope(ClassroomCategory)
   end
 
