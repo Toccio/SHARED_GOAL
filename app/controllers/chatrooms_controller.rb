@@ -5,17 +5,23 @@ class ChatroomsController < ApplicationController
     authorize @chatroom
   end
 
+  def index
+    @chatrooms = Chatroom.all
+    authorize @chatrooms
+  end
+
   def create
     @chatroom = Chatroom.new(set_chatroom)
-    authorize @chatroom
     if @chatroom.save
       redirect_to chatroom_path(@chatroom)
     else
       render :new
     end
+    authorize @chatroom
   end
 
   def show
+    @chatrooms = Chatroom.all
     @message = Message.new
     @chatroom = policy_scope(Chatroom).find(params[:id])
     authorize @chatroom

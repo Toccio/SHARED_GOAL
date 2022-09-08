@@ -1,10 +1,14 @@
 <div class="grid-container">
   <div class="open-chatrooms">
-  <br>
-  <br>
-  -----Todo: Open Chatrooms-----
+    <div class="sidebar">
+      <ul>
+        <% @chatrooms.each do |chatroom| %>
+        <li><%= link_to chatroom.name, chatroom_path(chatroom) %></li>
+        <% end %>
+      </ul>
+    </div>
   </div>
-  <div class="container chatroom"
+  <div class="container-chatroom"
     data-controller="chatroom-subscription"
     data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
     data-chatroom-subscription-current-user-id-value="<%= current_user.id %>">
