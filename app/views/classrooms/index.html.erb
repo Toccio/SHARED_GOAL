@@ -12,7 +12,7 @@
     <div class="cards-title"><h1><strong><%= @list.name %></strong></h1></div>
     <div class="cards-direct">
       <div class="cards-subtitle"> <h2><strong>Guitar > Classroom.name</strong></h2></div>
-      <div class="crt-button"><%= link_to "Create a classroom" %></div>
+      <div class="crt-button"><%= link_to "Create a classroom", new_classroom_category_classroom_path %></div>
     </div>
     <div class="cards-display">
         <div class="index-card">
@@ -20,7 +20,7 @@
             <h2> <%= classroom.name %> </h2>
             <br>
             <p><strong> <%= classroom.description %> </strong></p>
-            <%= link_to "Check it out", list_classroom_path(@list, classroom) %>
+
            <% end %>
         </div>
     </div>
