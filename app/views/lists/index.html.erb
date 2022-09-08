@@ -12,7 +12,8 @@
     <div class="cards-title"><h1><strong>Categories</strong></h1></div>
     <div class="cards-display">
         <div class="music index-card">
-          <%= link_to "",  class: "card-link"%>
+        <% @music = @lists.find_by(name: "Music") %>
+          <%= link_to  "", list_path(@music.id), class: "card-link" %>
           <h2> Music </h2>
         </div>
         <div class="web index-card">
