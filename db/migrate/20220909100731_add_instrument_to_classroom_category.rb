@@ -1,5 +1,5 @@
 class AddInstrumentToClassroomCategory < ActiveRecord::Migration[6.1]
   def change
-    add_column :classroom_categories, :instrument, :string
+    add_reference :classroom_categories, :instrument, null: false, foreign_key: true
   end
 end

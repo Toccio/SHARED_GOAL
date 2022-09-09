@@ -7,6 +7,10 @@ class ClassroomCategoriesController < ApplicationController
 
   def show
     @lists = policy_scope(List).all
+    # @instrument = policy_scope(Instrument).find(params[:instrument_id])
+    # raise
+    # @list = @instrument.list
+    # @lists = policy_scope(List).all
     @classroom_categories = policy_scope(ClassroomCategory)
     @classroom_category = policy_scope(ClassroomCategory).find([params[:id]])
     authorize @classroom_categories

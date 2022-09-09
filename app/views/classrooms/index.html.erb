@@ -11,9 +11,7 @@
   <div class="category-cards">
     <div class="cards-title"><h1><strong>Classroom</strong></h1></div>
     <div class="cards-direct">
-      <div class="cards-subtitle"> <h2><strong>Guitar > Classroom.name</strong></h2></div>
-      <div class="crt-button"><%= link_to "Create a classroom", new_classroom_category_classroom_path %></div>
-      <div class="cards-subtitle"> <h2><strong> <%= @list.name %> > <%= @classroom_category.instrument %> > <%= @classroom_category.name %> </strong></h2></div>
+      <div class="cards-subtitle"> <h2><strong> >  > <%= @classroom_category.name %> </strong></h2></div>
       <div class="crt-button"><%= link_to "Create a classroom",  new_classroom_category_classroom_path(@classroom_category, @classroom)  %></div>
     </div>
     <div class="cards-display">
