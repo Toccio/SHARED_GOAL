@@ -77,7 +77,7 @@ i = 0
         name: instruments[x],
         list: @list
       )
-        y = 0
+    y = 0
       5.times do
         @classroom_category = ClassroomCategory.create!(
         name: guitars[y],
