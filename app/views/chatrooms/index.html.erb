@@ -5,6 +5,8 @@
         <% @chatrooms.each do |chatroom| %>
         <li><%= link_to chatroom.name, chatroom_path(chatroom) %></li>
         <% end %>
+        <br>
+        <%= link_to "Start a new chatroom", new_chatroom_path%>
       </ul>
     </div>
   </div>

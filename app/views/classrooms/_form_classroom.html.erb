@@ -1,13 +1,6 @@
 <div class="form-container">
-  <%# <div class="classroom-form">       %>
-
-<div class="form row justify-content-center">
-    <div class="col-6">
-
-<div class="form-container">
   <div class="classroom-form">
-    <div class="col">
-
+    <div class="col-6">
       <%= simple_form_for [@classroom_category, @classroom] do |f| %>
         <%= f.input :name, class: "name-form" %>
         <%= f.input :description %>

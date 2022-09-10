@@ -1,4 +1,23 @@
-.mb-3 {
-  width: 100% !important;
-  margin-left: 0px !important;
+// .mb-3 {
+//   width: 100% !important;
+//   margin-left: 0px !important;
+// }
+
+.classroom-form {
+  margin-top: 4vh;
+  margin-bottom: 2vh;
+  color: white;
+  .col-6 {
+    margin-left: 25vw;
+  }
+
+  button {
+    margin-top: 5px;
+    background-color: #F3EA00 !important;
+    .btn {
+      border: none;
+      font-size: larger;
+      font-weight: bolder;
+    }
+  }
 }
