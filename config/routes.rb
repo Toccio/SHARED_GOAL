@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   resources :lists
 
+  resources :instruments, only: [:show]
+
   resources :classroom_categories, only: [:show] do
     resources :classrooms, only: [:index, :new, :create] do
       resources :bookings, only: [:index, :new, :create]
@@ -19,4 +21,7 @@ Rails.application.routes.draw do
   resources :chatrooms, only: [:new, :create, :show, :index] do
     resources :messages, only: :create
   end
+
+  get 'booking/:id/accept', to: 'bookings#accept', as: :accept_booking
+  get 'booking/:id/decline', to: 'bookings#decline', as: :decline_booking
 end

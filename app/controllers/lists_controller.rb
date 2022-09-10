@@ -16,14 +16,22 @@ class ListsController < ApplicationController
   def show
     @lists = policy_scope(List).all
     @list = policy_scope(List).find(params[:id])
-    @classroom_categories = policy_scope(ClassroomCategory).find(params[:id])
-    @classroom_categories = @list.classroom_categories
+    @instruments = policy_scope(Instrument).find(params[:id])
+    # @instruments = @list.instruments
     authorize @list
 
+
     if params[:query].present?
-      @classroom_categories = ClassroomCategory.global_search(params[:query])
+      @lists = List.global_search(params[:query])
+      # @list = policy_scope(List).find(params[:id])
     else
-      @classroom_categories = policy_scope(ClassroomCategory)
+      @lists = policy_scope(List)
     end
+
+    # if params[:query].present?
+    #   @instruments = Instrument.global_search(params[:query])
+    # else
+    #   @instruments = policy_scope(instrument)
+    # end
   end
 end

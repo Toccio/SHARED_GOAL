@@ -1,6 +1,6 @@
-class ClassroomCategory < ApplicationRecord
-  belongs_to :instrument
-  has_many :classroom, dependent: :destroy
+class Instrument < ApplicationRecord
+  belongs_to :list
+  has_many :classroom_categories, dependent: :destroy
 
   include PgSearch::Model
   pg_search_scope :global_search,
