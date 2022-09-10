@@ -28,7 +28,7 @@ class ClassroomsController < ApplicationController
     @classroom.user = current_user
     @classroom.classroom_category = @classroom_category
     if @classroom.save!
-      redirect_to classroom_category_classrooms_path(@classroom_category)
+      redirect_to classroom_path(@classroom)
     else
       render :new
     end
