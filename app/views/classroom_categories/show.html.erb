@@ -9,14 +9,14 @@
   </div>
 
   <div class="category-cards">
-    <div class="cards-title"><h1><strong>Music(dynamic)</strong></h1></div>
+    <div class="cards-title"><h1><strong>Music</strong></h1></div>
     <div class="cards-display">
-      <% @classroom_categories.each do |classroom_category| %>
         <div class="index-card">
-      <%= link_to "Check it out",  classroom_category_classrooms_path(classroom_category,@classroom ), class: "btn"  %>
-          <h2> <%= classroom_category.name %> </h2>
+          <% @classroom_categories.each do |classroom_category| %>
+            <%= link_to "",classroom_category_classrooms_path(ClassroomCategory.first), class: "card-link" %>
+            <h2> <%= classroom_category.name %> </h2>
+          <% end %>
         </div>
-      <%end%>
     </div>
   </div>
 </div>

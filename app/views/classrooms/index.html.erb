@@ -9,9 +9,9 @@
   </div>
 
   <div class="category-cards">
-    <div class="cards-title"><h1><strong>Classroom</strong></h1></div>
+    <div class="cards-title"><h1><strong><%= @classroom_category.instrument.list.name %></strong></h1></div>
     <div class="cards-direct">
-      <div class="cards-subtitle"> <h2><strong> <%= @classroom_category.instrument.list.name %> > <%= @classroom_category.instrument.name %> > <%= @classroom_category.name %> </strong></h2></div>
+      <div class="cards-subtitle"> <h2><strong> > <%= @classroom_category.instrument.name %> > <%= @classroom_category.name %> </strong></h2></div>
       <div class="crt-button"><%= link_to "Create a classroom",  new_classroom_category_classroom_path(@classroom_category, @classroom)  %></div>
     </div>
     <div class="cards-display">
