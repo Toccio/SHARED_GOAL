@@ -11,12 +11,12 @@
   <div class="category-cards">
     <div class="cards-title"><h1><strong>Music</strong></h1></div>
     <div class="cards-display">
+      <% @instruments.each do |instrument|  %>
         <div class="index-card">
-          <% @instruments.each do |instrument|  %>
             <%= link_to "",classroom_category_path(instrument, @classroom_category), class: "card-link" %>
             <h2> <%= instrument.name %> </h2>
-          <% end %>
         </div>
+      <% end %>
     </div>
   </div>
 </div>
