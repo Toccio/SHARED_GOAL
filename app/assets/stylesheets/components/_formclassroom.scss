@@ -1,4 +1,41 @@
-.col-6 {
+.form-container {
+  margin-top: 80px;
+}
+
+
+.classroom-form {
+  margin: auto;
+    width: 50%;
+
+}
+
+.col {
   font-family: Arial, Helvetica, sans-serif;
   color: white;
+
+  .mb-3 {
+    width: 100% !important;
+    margin: 0px !important;
+    margin-bottom: 6px !important;
+    // height: 70px !important;
+  }
+  // .chabun {
+  //   background: #CBB26B;
+  //   width: 75%;
+  // }
+
+  // .simple_form {
+  //   float: none;
+  //   text-align : center;
+  //   border: 1px solid #CCC;
+  // }
+  // .simple_form .input-box {
+  //   margin-bottom: 10px;
+  // }
+  // .simple_form input {
+  //   margin-bottom: 10px;
+  //   margin: 10px 10px;
+  //   display: inline-block;
+  //   text-align : center;
+  // }
 }

@@ -1,10 +1,14 @@
 .small-gray {
-  margin-top: 300px;
+  margin-top: 250px;
 }
 
 .col-6 {
   font-family: Arial, Helvetica, sans-serif;
   color: white;
+  text-align : center;
+  border: 1px solid #CCC;
+  padding-top: 10px;
+  padding-bottom: 10px;
   .name-form {
     color: black;
     width: 75%;
@@ -18,19 +22,4 @@
 .chabun {
   background: #CBB26B;
   width: 75%;
-}
-
-.simple_form {
-  float: none;
-  text-align : center;
-  border: 1px solid #CCC;
-}
-.simple_form .input-box {
-  margin-bottom: 10px;
-}
-.simple_form input {
-  margin-bottom: 10px;
-  margin: 10px 10px;
-  display: inline-block;
-  text-align : center;
 }
