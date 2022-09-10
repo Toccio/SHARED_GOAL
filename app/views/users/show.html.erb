@@ -1,9 +1,9 @@
 <br><br><br>
 
 <%=link_to "Let's go back", lists_path, class: "navigate-button" %>
-<div class="user-container container w-100">
+<div class="user-container container w-70">
 
-<div class="container ">
+  <div class="container ">
     <div class="row">
       <div class="col-12 col-lg-6">
 
@@ -13,7 +13,9 @@
                         <div class="m-b-25">
                             <img src="https://img.icons8.com/bubbles/100/000000/user.png" class="img-radius" alt="User-Profile-Image">
                         </div>
-                        <h6 class="f-w-600">User Name</h6>
+                        <% @classrooms.each do|classroom| %>
+                        <%= user.name %>
+                        <% end %>
                         <p>Web Designer</p>
                         <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
                     </div>
@@ -24,7 +26,9 @@
                         <div class="row">
                             <div class="col-sm-6">
                                 <p class="m-b-10 f-w-600">Email</p>
-                                <h6 class="text-muted f-w-400">rntng@gmail.com</h6>
+                                <% @classrooms.each do |classroom| %>
+                                <p><%= booking.user.email %></p>
+                                <% end %>
                             </div>
                             <div class="col-sm-6">
                                 <p class="m-b-10 f-w-600">Phone</p>
@@ -40,7 +44,6 @@
                                   <% if !classroom.bookings.empty? %>
                                     <%= classroom.name %>
                                     <% classroom.bookings.each do |booking| %>
-                                      <p><%= booking.user.email %></p>
                                       <p><%= booking.status %></p>
                                       <%= link_to "Accept", accept_booking_path(booking) %>
                                       <%= link_to "Decline", decline_booking_path(booking)  %>
@@ -67,14 +70,9 @@
                 </div>
             </div>
         </div>
-
-        </div>
       </div>
-
     </div>
   </div>
 </div>
-
-<br><br><br>
 
 <%=link_to "Join now", "#", class: "navigate-button" %>

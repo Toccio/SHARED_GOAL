@@ -31,7 +31,7 @@
           <br>
           <div class= "row" id="btn">
           <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            <%=link_to "Join now", "#", class: "join-button" %>
+            <%=link_to "Join now", "#", class: "join-b" %>
           </button>
           <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -46,7 +46,9 @@
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
                   <button type="button" class="btn btn-secondary">
+                    <%=link_to "Yes", lists_path(notice: true) %>
                     <%=link_to "Yes", list_path(List.first) %>
+
                   </button>
                 </div>
               </div>
@@ -55,7 +57,7 @@
           </div>
         </div>
         <div class="col-12 col-lg-6">
-          <%= cl_image_tag @classroom.photo.key, height: 586, width: 586, crop: :fill %>
+          <%= cl_image_tag @classroom.photo.key, height: "100%", width: "100%", crop: :fill %>
         </div>
       </div>
     </div>
