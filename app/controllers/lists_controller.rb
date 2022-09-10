@@ -1,6 +1,9 @@
 class ListsController < ApplicationController
   def index
-    # raise
+    # if params[:notice].present?
+    #   notice = "Your request has been successful"
+    # end
+    #raise
     # @list = policy_scope(List).find(params[:id])
     if params[:query].present?
       @lists = List.global_search(params[:query])

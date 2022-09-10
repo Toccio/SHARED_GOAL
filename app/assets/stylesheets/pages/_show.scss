@@ -1,17 +1,21 @@
 
 .show-container {
-  background-image: url(sewimming.jpg);
+  background-image: url(https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80);
   text-align: justify;
   margin: 0 auto;
   padding: 30px 30px 30px 30px;
   border-radius: 5px;
-  margin-top: 20px;
+  margin-top: 0px;
   margin-bottom: 70px;
     .more-how {
-      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
+.col-lg-6 {
+  margin-top: 0px;
+  padding-bottom: 0px;
 
+}
 }
 
 .button {

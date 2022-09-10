@@ -3,10 +3,10 @@
   background-image: url(https://images.unsplash.com/photo-1516796181074-bf453fbfa3e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80);
   text-align: justify;
   margin: 0 auto;
-  padding: 50px 0px 50px 100px;
+  padding: 150px 0px 0px 100px;
   border-radius: 5px;
-  margin-top: 20px;
-  margin-bottom: 0px;
+  margin-top: 0px;
+  margin-bottom: 100px;
     .more-how {
       font-family: Georgia, 'Times New Roman', Times, serif;
     }
@@ -35,6 +35,10 @@
 
 .m-l-0 {
   margin-left: 0px;
+  margin-top: 0px;
+}
+.row {
+  margin-top: 0px;
 }
 
 .user-card-full .user-profile {
