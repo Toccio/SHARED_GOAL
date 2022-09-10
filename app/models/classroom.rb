@@ -1,7 +1,7 @@
 class Classroom < ApplicationRecord
   belongs_to :user
   belongs_to :classroom_category
-  belongs_to :list
+  # belongs_to :list
   has_many :bookings, dependent: :destroy
   validates :name, presence: true
   validates :description, presence: true
