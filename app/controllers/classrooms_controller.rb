@@ -4,6 +4,7 @@ class ClassroomsController < ApplicationController
   def index
     @lists = policy_scope(List).all
     @classroom_category = policy_scope(ClassroomCategory).find(params[:classroom_category_id])
+    # raise
     # @list = @classroom_category.list
     if params[:query].present?
       @classrooms = Classroom.search_by_name_and_description(params[:query])
