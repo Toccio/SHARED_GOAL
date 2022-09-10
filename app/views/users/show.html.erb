@@ -1,4 +1,4 @@
-<br><br><br><br>
+<br><br><br>
 
 <%=link_to "Let's go back", lists_path, class: "navigate-button" %>
 <div class="user-container container w-100">
@@ -42,6 +42,8 @@
                                     <% classroom.bookings.each do |booking| %>
                                       <p><%= booking.user.email %></p>
                                       <p><%= booking.status %></p>
+                                      <%= link_to "Accept", accept_booking_path(booking) %>
+                                      <%= link_to "Decline", decline_booking_path(booking)  %>
                                     <% end %>
                                   <% end %>
                                 <% end %>

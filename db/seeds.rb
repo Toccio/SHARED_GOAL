@@ -65,40 +65,46 @@ creators = [
 
 
 i = 0
-15.times do
+5.times do
   @list = List.create!(
     name: list_category[i],
     description: "Put the description",
     photo: Faker::LoremFlickr.image(size: "358x100", search_terms: ['sports'])
   )
-  y = 0
-    15.times do
-      # ClassroomCategory.destroy(@classroom_category),
-      @classroom_category = ClassroomCategory.create!(
-        name: guitars[y],
-        instrument: instruments[y],
+  x = 0
+    5.times do
+      @instrument = Instrument.create!(
+        name: instruments[x],
         list: @list
       )
-      j = 0
-      15.times do
-        @classroom = Classroom.create!(
-          name: class_name[j],
-          description: creators[j],
-          category: %w[Music Fitness Languages Hiking Gardening].sample,
-          start_date: Faker::Date.in_date_period(month: 2),
-          end_date: Faker::Date.in_date_period(month: 3),
-          address: Faker::Address.full_address,
-          max_number_of_partecipants: rand(1..10),
-          language: Faker::Nation.language,
-          level: levels.sample,
-          time: rand(1..6),
-          user: user,
-          classroom_category: @classroom_category,
-        )
-        j += 1
+    y = 0
+      5.times do
+        @classroom_category = ClassroomCategory.create!(
+        name: guitars[y],
+        instrument: @instrument
+      )
+        j = 0
+        5.times do
+          @classroom = Classroom.create!(
+            name: class_name[j],
+            description: creators[j],
+            category: %w[Music Fitness Languages Hiking Gardening].sample,
+            start_date: Faker::Date.in_date_period(month: 2),
+            end_date: Faker::Date.in_date_period(month: 3),
+            address: Faker::Address.full_address,
+            max_number_of_partecipants: rand(1..10),
+            language: Faker::Nation.language,
+            level: levels.sample,
+            time: rand(1..6),
+            user: user,
+            classroom_category: @classroom_category,
+          )
+          j += 1
+        end
+        y += 1
       end
-      y += 1
-    end
+    x += 1
+  end
   i += 1
 end
 

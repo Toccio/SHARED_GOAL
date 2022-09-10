@@ -1,14 +1,12 @@
-body {
-  background-color: #f9f9fa
-}
+
 .user-container {
-  background-image: url(sewimming.jpg);
+  background-image: url(https://images.unsplash.com/photo-1516796181074-bf453fbfa3e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80);
   text-align: justify;
   margin: 0 auto;
-  padding: 50px 30px 30px 50px;
+  padding: 50px 0px 50px 100px;
   border-radius: 5px;
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
     .more-how {
       font-family: Georgia, 'Times New Roman', Times, serif;
     }
@@ -44,8 +42,7 @@ body {
 }
 
 .bg-c-lite-green {
-  background: -webkit-gradient(linear, left top, right top, from(#f29263), to(#ee5a6f));
-  background: linear-gradient(to right, #ee5a6f, #f29263);
+  background-image: url(https://images.unsplash.com/photo-1515261439133-0f6cfb098e04?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80);
 }
 
 .user-profile {
@@ -105,7 +102,7 @@ p {
 }
 
 .text-muted {
-  color: #919aa3 !important;
+  color: black !important;
 }
 
 .b-b-default {
