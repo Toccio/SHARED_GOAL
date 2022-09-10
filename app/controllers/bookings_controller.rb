@@ -40,6 +40,16 @@ class BookingsController < ApplicationController
     Booking.accepted #Booking.where(status: 'accepted')
   end
 
+  def accept
+    raise
+    @booking
+  end
+
+  def decline
+    raise
+    @booking
+  end
+
   def destroy
     @booking.destroy
     # redirect_to booking_path
