@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   resources :lists
 
+  resources :instruments, only: [:show]
+
   resources :classroom_categories, only: [:show] do
     resources :classrooms, only: [:index, :new, :create] do
       resources :bookings, only: [:index, :new, :create]
