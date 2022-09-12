@@ -1,4 +1,6 @@
 require 'faker'
+require "open-uri"
+
 
 puts "Creating database"
 Skill.destroy_all
@@ -9,12 +11,9 @@ Classroom.destroy_all
 Booking.destroy_all
 puts "Database created 👌"
 
-# instruments = {
-#   Guitar: "https://images.unsplash.com/photo-1510915361894-db8b60106cb1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Z3VpdGFyfGVufDB8fDB8fA%3D%3D&w=1000&q=80",
-#   Piano: "https://media.istockphoto.com/photos/favorite-classical-musicclose-up-view-of-gentle-female-hands-playing-picture-id1129332575?k=20&m=1129332575&s=612x612&w=0&h=DTpOnAdbtHwbC60LMOpSOlMOogOPg8wyyIRvJzwJtc8=",
-#   Drum: "https://media.istockphoto.com/photos/drummer-playing-drums-on-stage-picture-id499754206?k=20&m=499754206&s=612x612&w=0&h=1xzdpUnY9Rgv2-otasW2RKhhI4ryE1yuGXlFtyyuRyg=",
-#   Violin: "https://images.immediate.co.uk/production/volatile/sites/24/2021/03/when-was-the-violin-invented-2ccbe78.jpg"
-# }
+file = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg')
+classroom = Classroom.new(name: "Topo Gigio")
+classroom.photo.attach(io: file, filename: 'topo.png', content_type: 'image/png')
 
 levels = ["Beginner", "Intermediate", "Advanced"]
 
