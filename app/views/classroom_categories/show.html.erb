@@ -13,6 +13,7 @@
       <% @classroom_categories.each do |classroom_category| %>
         <div class="index-card">
             <%= link_to "",classroom_category_classrooms_path(ClassroomCategory.first), class: "card-link" %>
+            <%= cl_image_tag classroom_category.photo.key%>
             <h2> <%= classroom_category.name %> </h2>
         </div>
       <% end %>

@@ -16,7 +16,7 @@ class ListsController < ApplicationController
   def show
     @lists = policy_scope(List).all
     @list = policy_scope(List).find(params[:id])
-    @instruments = policy_scope(Instrument).find(params[:id])
+    # @instruments = policy_scope(Instrument).find(params[:id])
     # @instruments = @list.instruments
     authorize @list
 

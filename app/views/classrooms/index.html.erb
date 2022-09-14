@@ -17,10 +17,12 @@
     <div class="cards-display">
       <% @classrooms.each do |classroom| %>
         <div class="index-card">
-            <%= link_to "" , classroom_path(classroom) %>
-            <h2> <%= classroom.name %></h2>
-            <br>
-            <p><strong> <%= classroom.description %> </strong></p>
+          <%= link_to "" , classroom_path(classroom) %>
+          <h2> <%= classroom.name %></h2>
+          <br>
+          <p><strong> <%= classroom.description %> </strong></p>
+          <%= cl_image_tag classroom.photo.key %>
+
         </div>
       <% end %>
     </div>
