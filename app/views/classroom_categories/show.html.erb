@@ -1,19 +1,25 @@
 <div class="index-content">
-  <div class="sidebar">
-    <div class="text"><%= link_to "Categories", lists_path %></div>
-    <ul>
-      <% @lists.each do |i| %>
-        <li><%= link_to i.name %></li>
-      <% end %>
-    </ul>
+  <div class="fixed_sidebar">
+    <div class="sidebar">
+      <div class="text"><%= link_to "Categories", list_path(List.first) %></div>
+      <ul>
+        <% @lists.each do |i| %>
+          <% @var = @lists.find_by(name: "#{i.name}") %>
+          <li><%= link_to i.name, instrument_path(@var.id) %></li>
+        <% end %>
+      </ul>
+    </div>
   </div>
   <div class="category-cards">
-    <div class="cards-title"><h1><strong>Music</strong></h1></div>
+    <div class="cards-title"><h1><strong><%= @classroom_category.first.instrument.list.name %></strong></h1></div>
+    <div class="cards-direct">
+      <div class="cards-subtitle"> <h2><strong> > <%= @classroom_category.first.instrument.name %> </strong></h2></div>
+    </div>
     <div class="cards-display">
       <% @classroom_categories.each do |classroom_category| %>
         <div class="index-card">
-            <%= link_to "",classroom_category_classrooms_path(ClassroomCategory.first), class: "card-link" %>
-            <h2> <%= classroom_category.name %> </h2>
+          <%= link_to "",classroom_category_classrooms_path(ClassroomCategory.first), class: "card-link" %>
+          <h2> <%= classroom_category.name %> </h2>
         </div>
       <% end %>
     </div>
