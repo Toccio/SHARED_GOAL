@@ -29,9 +29,9 @@
             </div>
           </div>
           <br>
-          <div class= "row" id="btn">
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            <%=link_to "Join now", "#", class: "join-b" %>
+          <div class= "row">
+          <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <%=link_to "Join now", "#" %>
           </button>
           <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -55,7 +55,8 @@
           </div>
         </div>
         <div class="col-12 col-lg-6">
-          <%= cl_image_tag @classroom.photo.key, height: "100%", width: "100%", crop: :fill %>
+          <%# <%= cl_image_tag @classroom.photo.key %>
+          <%= image_tag @classroom.photo.url, height: "100%", width: "100%", crop: :fill %>
         </div>
       </div>
     </div>

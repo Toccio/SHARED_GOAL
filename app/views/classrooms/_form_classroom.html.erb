@@ -1,32 +1,56 @@
-<div class="form-container">
-  <%# <div class="classroom-form">       %>
-
-<div class="form row justify-content-center">
-    <div class="col-6">
-
-<div class="form-container">
+<div class="form-container" >
   <div class="classroom-form">
-    <div class="col">
-
+    <div class="col-6">
       <%= simple_form_for [@classroom_category, @classroom] do |f| %>
-        <%= f.input :name, class: "name-form" %>
-        <%= f.input :description %>
-        <%= f.input :category, collection: %w[Music Fitness Languages Hiking Gardening]%>
-        <div class="row g-3">
-          <div class="col">
-            <%= f.input :start_date %>
-            <%= f.input :end_date %>
-            <%= f.input :time %>
-            <%# <%= f.input :address %>
-            <%= f.input :level, collection: %w[Beginner Intermediate Advanced]%>
-            <%= f.input :language %>
-            <%= f.input :photo, as: :file, input_html: { multiple: false } %>
-            <%# <%= f.input :updated_at, :order => [:day, :month, :year] %>
-            <button class="form-actions w-100 rounded"> <%= f.button :submit, "Let's go!"%> </button>
-          <% end %>
-          <br>
+        <div class="container">
+          <div class="row">
+            <div class="form-item col-12">
+              <%= f.input :name, :label => 'Your classroom name' ,:label_html => { :class => 'form-label'}, placeholder: 'Give your classroom a name!'%>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-item col-12">
+              <%= f.input :description, :label => 'Describe your classroom',:label_html => { :class => 'form-label'}, placeholder: 'Type in nice words to attract your potential classmates!' %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-item col-4">
+              <%= f.input :level, collection: %w[Beginner Intermediate Advanced]%>
+            </div>
+            <div class="form-item col-4">
+              <%= f.input :category, collection: %w[Music Web_Development Photography Animation Graphic_Design Illustration Personal_Development Creative_Writing Film&Video] %>
+            </div>
+            <div class="form-item col-4">
+              <%= f.input :language, placeholder: 'For communication' %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-item col-4">
+              <%= f.input :start_date, as: :date, html5:true, placeholder: 'dd/mm/yyyy' %>
+            </div>
+            <div class="form-item col-4">
+              <%= f.input :end_date, as: :date, html5:true, placeholder: 'dd/mm/yyyy' %>
+            </div>
+            <div class="form-item col-4">
+              <%= f.input :time, :label => 'Duration of each class',:label_html => { :class => 'form-label'}, placeholder: 'In hours, example: 1.5' %>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form-item col-12">
+              <%= f.input :photo, as: :file, input_html: { multiple: false } %>
+            </div>
+          </div>
+          <%# <%= f.input :updated_at, :order => [:day, :month, :year] %>
+          <%# <br> <br> <br> %>
+          <div class="form-item col-12">
+            <%= f.button :submit, "Let's go!"%>
+          </div>
         </div>
-      </div>
+      <% end %>
     </div>
   </div>
 </div>

@@ -56,6 +56,6 @@ class ClassroomsController < ApplicationController
   end
 
   def set_params
-    params.require(:classroom).permit(:name, :description, :category, :start_date, :end_date, :max_number_participants,:level, :language, :time, :address, :photo)
+    params.require(:classroom).permit(:photo, :name, :description, :category, :start_date, :end_date, :max_number_participants, :level, :language, :time, :address)
   end
 end

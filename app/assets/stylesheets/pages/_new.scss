@@ -1,4 +1,72 @@
-.mb-3 {
-  width: 100% !important;
-  margin-left: 0px !important;
+// .mb-3 {
+//   width: 100% !important;
+//   margin-left: 0px !important;
+// }
+
+.classroom-form {
+  margin-top: 4vh;
+  margin-bottom: 2vh;
+  color: white;
+  .col-6 {
+    margin-left: 25vw;
+
+  }
+  .btn {
+    width: inherit;
+    border: 4px solid #F3EA00;
+    font-size: 28px;
+    font-weight: bolder;
+    color: #F3EA00;
+    margin-top: 10px;
+    background-color: transparent;
+    text-decoration: none;
+  }
+
+  .btn:hover {
+    background-color: #F3EA00;
+    box-shadow: 0 0 10px #F3EA00, 0 0 15px #F3EA00,0 0 25px #F3EA00;
+    color: #120127;
+  }
+}
+
+
+#login, #sign-up, #reset {
+
+  .form-label {
+    color: white;
+  }
+
+  .btn {
+  padding: 10px 40px;
+  gap: 20px;
+  border: 4px solid #F3EA00;
+  border-radius: 8px;
+  // font-weight: 400;
+  background-color: transparent;
+  text-decoration: none;
+  color: #F3EA00;
+  font-size: 28px;
+  font-weight: bolder;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.btn:hover {
+  background-color: #F3EA00;
+  box-shadow: 0 0 10px #F3EA00, 0 0 15px #F3EA00,0 0 25px #F3EA00;
+  color: #120127;
+}
+  .mb-3 {
+    color: white;
+  }
+
+  .white-text a {
+    color: white;
+    text-decoration: none;
+    padding-top: 10px;
+
+
+  }
 }

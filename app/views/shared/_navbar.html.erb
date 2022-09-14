@@ -16,13 +16,12 @@
         <div class="navbar-profile">
           <div class="profile-image">
             <%# <%= image_tag("https://kitt.lewagon.com/placeholder/users/#{current_user.nickname}", class: 'profile-image')  %>
-           <%= image_tag("profilehome1.jpg", class: 'profile-image') %>
+           <%= image_tag("https://avatars.dicebear.com/api/human/profile.svg?mood[]=happy", class: 'profile-image') %>
           </div>
           <div class="profile-items">
              <ul>
-              <li><%= link_to "My Profile" %></li>
+              <li><%= link_to "My Profile", user_path(current_user) %></li>
               <li><%= link_to "My Classrooms" %></li>
-
               <li><%= link_to "Chatrooms", chatrooms_path%>
               <li><%= link_to "Logout", destroy_user_session_path, method: :delete%></li>
             </ul>
@@ -31,7 +30,7 @@
       <% else %>
         <div class="navbar-profile">
           <div class="profile-image">
-            <%= image_tag("https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80", class: 'profile-image') %>
+            <%= image_tag("login_pro.png", class: 'profile-image') %>
           </div>
           <div class="profile-items">
             <li><%= link_to "Login", new_user_session_path %></li>
