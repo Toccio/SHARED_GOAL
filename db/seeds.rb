@@ -26,8 +26,7 @@ levels = ["Beginner", "Intermediate", "Advanced"]
 list_category = [
   "Music", "Web Development", "Photography", "Animation",
   "Graphic Design", "Illustration", "Personal Development", "Creative Writing",
-  "Film & Video", "UI/UX Design", "Fine Art", "Marketing", "Leadership & Management",
-  "Entrepreneurship","Business Analytics"
+  "Film & Video"
 ]
 
 instruments = [
@@ -54,13 +53,14 @@ classes = {
 }
 
 i = 0
-1.times do
+9.times do
   @list = List.create!(
     name: list_category[i],
     description: "Put the description",
     photo: Faker::LoremFlickr.image(size: "358x100", search_terms: ['sports'])
   )
 
+  if @list.name == "Music"
 
 # INSTRUMENTS
 # 1 Trumpet
@@ -106,7 +106,7 @@ file = URI.open('https://www.reedmaker.com/static/Reed-Shop-Music-6a92d38cb51c57
 @instrument.save!
 
 # 8 Saxophone
-file = URI.open('https://www.bsmny.org/wp-content/uploads/2019/08/pexels-photo-164936.jpeg')
+file = URI.open('https://images.squarespace-cdn.com/content/v1/6088b5d76b40ec2a18c4a5c5/1660145870351-J2SR09XO296EMUV0276S/image0.jpeg?format=1000w')
 @instrument = Instrument.new(name: "Saxophone", list: @list)
 @instrument.photo.attach(io: file, filename: 'Saxophone.png', content_type: 'image/png')
 @instrument.save!
@@ -187,7 +187,7 @@ file = URI.open('https://fkb.dk/sites/frederiksberg.ddbcms.dk/files/title_image/
    @classroom_category.save!
 
    # 9 Multi-Neck Guitar
-   file = URI.open('https://www.musicianwave.com/wp-content/uploads/2021/08/Multi-Neck-Guitar-788x1050.jpg')
+   file = URI.open('https://i.ytimg.com/vi/uQgc_VQPG9I/maxresdefault.jpg')
    @classroom_category = ClassroomCategory.new(name: "Multi-Neck Guitar", instrument: @instrument)
    @classroom_category.photo.attach(io: file, filename: 'Multi-Neck Guitar.png', content_type: 'image/png')
    @classroom_category.save!
@@ -200,7 +200,7 @@ file = URI.open('https://fkb.dk/sites/frederiksberg.ddbcms.dk/files/title_image/
    @classroom_category.save!
 
    # 11 Harp Guitar
-   file = URI.open('https://www.musicianwave.com/wp-content/uploads/2021/08/harp-guitar-1-788x1050.jpg')
+   file = URI.open('https://i.ytimg.com/vi/0FF-Q4gP_50/maxresdefault.jpg')
    @classroom_category = ClassroomCategory.new(name: "Harp Guitar", instrument: @instrument)
    @classroom_category.photo.attach(io: file, filename: 'Harp Guitar.png', content_type: 'image/png')
    @classroom_category.save!
@@ -215,82 +215,91 @@ file = URI.open('https://fkb.dk/sites/frederiksberg.ddbcms.dk/files/title_image/
   # CLASSROOMS
   # 1
   file = URI.open('https://res.cloudinary.com/dofortjqc/image/upload/v1663164374/Screenshot_210_rwrchs.png')
-  @classroom = Classroom.new(name: "Life and Music", description:"Vlad Postolachi", level:["Beginner", "Intermediate", "Advanced"].sample, user: user, classroom_category:@classroom_category)
+  @classroom = Classroom.new(name: "Life and Music", description:"Vlad Postolachi", level:["Beginner", "Intermediate", "Advanced"].sample, start_date:Faker::Date.in_date_period(month: 2), end_date: Faker::Date.in_date_period(month: 3),
+  max_number_of_partecipants: rand(1..10), time: rand(1..6), language: Faker::Nation.language, user: user, classroom_category:@classroom_category)
   @classroom.photo.attach(io: file, filename: 'Life and Music.png', content_type: 'image/png')
   @classroom.save!
 
   # 2
-  file = URI.open('https://i.pinimg.com/originals/96/be/74/96be74868a71f08c64fee2d4967717fd.jpg')
-  @classroom = Classroom.new(name: "Hard Rock Life", description:"Camilla Modena", level:["Beginner", "Intermediate", "Advanced"].sample, user: user, classroom_category:@classroom_category)
+  file = URI.open('https://i.pinimg.com/236x/2c/5c/3f/2c5c3fdd75c0c10b3d8d519caf9a7754--funny-lizards-funny-animal-pictures.jpg')
+  @classroom = Classroom.new(name: "Hard Rock Life", description:"Camilla Modena", level:["Beginner", "Intermediate", "Advanced"].sample, start_date:Faker::Date.in_date_period(month: 2), end_date: Faker::Date.in_date_period(month: 3),
+  max_number_of_partecipants: rand(1..10), time: rand(1..6), language: Faker::Nation.language, user: user, classroom_category:@classroom_category)
   @classroom.photo.attach(io: file, filename: 'Hard Rock Life.png', content_type: 'image/png')
   @classroom.save!
 
   # 3
   file = URI.open('https://guitaradvice.com/wp-content/uploads/2021/08/Guitar-power-boat.jpg')
-  @classroom = Classroom.new(name: "My Amigos", description:"Luca Severo", level:["Beginner", "Intermediate", "Advanced"].sample, user: user, classroom_category:@classroom_category)
+  @classroom = Classroom.new(name: "My Amigos", description:"Luca Severo", level:["Beginner", "Intermediate", "Advanced"].sample, start_date:Faker::Date.in_date_period(month: 2), end_date: Faker::Date.in_date_period(month: 3),
+  max_number_of_partecipants: rand(1..10), time: rand(1..6), language: Faker::Nation.language, user: user, classroom_category:@classroom_category)
   @classroom.photo.attach(io: file, filename: 'My Amigos.png', content_type: 'image/png')
   @classroom.save!
 
   # 4
   file = URI.open('https://i.pinimg.com/originals/8f/4a/98/8f4a981fde83f53740b6e083729d3928.jpg')
-  @classroom = Classroom.new(name: "Low and Slow", description:"Chris Rundell", level:["Beginner", "Intermediate", "Advanced"].sample, user: user, classroom_category:@classroom_category)
+  @classroom = Classroom.new(name: "Low and Slow", description:"Chris Rundell", level:["Beginner", "Intermediate", "Advanced"].sample, start_date:Faker::Date.in_date_period(month: 2), end_date: Faker::Date.in_date_period(month: 3),
+  max_number_of_partecipants: rand(1..10), time: rand(1..6), language: Faker::Nation.language, user: user, classroom_category:@classroom_category)
   @classroom.photo.attach(io: file, filename: 'Low and Slow.png', content_type: 'image/png')
   @classroom.save!
 
   # 5
   file = URI.open('https://ak3.picdn.net/shutterstock/videos/1014841363/thumb/1.jpg?ip=x480')
-  @classroom = Classroom.new(name: "Music With Balls", description:"João Sanches", level:["Beginner", "Intermediate", "Advanced"].sample, user: user, classroom_category:@classroom_category)
+  @classroom = Classroom.new(name: "Music With Balls", description:"João Sanches", level:["Beginner", "Intermediate", "Advanced"].sample, start_date:Faker::Date.in_date_period(month: 2), end_date: Faker::Date.in_date_period(month: 3),
+  max_number_of_partecipants: rand(1..10), time: rand(1..6), language: Faker::Nation.language, user: user, classroom_category:@classroom_category)
   @classroom.photo.attach(io: file, filename: 'João Sanches.png', content_type: 'image/png')
   @classroom.save!
 
   # 6
   file = URI.open('https://media.istockphoto.com/photos/playing-slide-guitar-with-a-banana-going-bananas-concept-picture-id1206026224?k=20&m=1206026224&s=170667a&w=0&h=HkVbtT2aqxQDKefMWJSynZy5H6S9s3W_oySzliFkNPg=')
-  @classroom = Classroom.new(name: "Music and Banana", description:"André R. Ferrer", level:["Beginner", "Intermediate", "Advanced"].sample, user: user, classroom_category:@classroom_category)
+  @classroom = Classroom.new(name: "Music and Banana", description:"André R. Ferrer", level:["Beginner", "Intermediate", "Advanced"].sample, start_date:Faker::Date.in_date_period(month: 2), end_date: Faker::Date.in_date_period(month: 3),
+  max_number_of_partecipants: rand(1..10), time: rand(1..6), language: Faker::Nation.language, user: user, classroom_category:@classroom_category)
   @classroom.photo.attach(io: file, filename: 'André R. Ferrer.png', content_type: 'image/png')
   @classroom.save!
 
   # 7
-  file = URI.open('https://i.pinimg.com/236x/2c/5c/3f/2c5c3fdd75c0c10b3d8d519caf9a7754--funny-lizards-funny-animal-pictures.jpg')
-  @classroom = Classroom.new(name: "Cupcake and Music", description:"Jess Silva Carvalho", level:["Beginner", "Intermediate", "Advanced"].sample, user: user, classroom_category:@classroom_category)
+  file = URI.open('http://sc04.alicdn.com/kf/HTB1MG0.A1uSBuNjSsplq6ze8pXaZ.jpg')
+  @classroom = Classroom.new(name: "Cupcake and Music", description:"Jess Silva Carvalho", level:["Beginner", "Intermediate", "Advanced"].sample, start_date:Faker::Date.in_date_period(month: 2), end_date: Faker::Date.in_date_period(month: 3),
+  max_number_of_partecipants: rand(1..10), time: rand(1..6), language: Faker::Nation.language, user: user, classroom_category:@classroom_category)
   @classroom.photo.attach(io: file, filename: 'Jess Silva Carvalho.png', content_type: 'image/png')
   @classroom.save!
 
   # 8
   file = URI.open('https://thumbs.dreamstime.com/b/funny-animal-chipmunk-guitar-like-singer-white-166160011.jpg')
-  @classroom = Classroom.new(name: "Girl on Fire", description:"Anastasiya Kim", level:["Beginner", "Intermediate", "Advanced"].sample, user: user, classroom_category:@classroom_category)
+  @classroom = Classroom.new(name: "Girl on Fire", description:"Anastasiya Kim", level:["Beginner", "Intermediate", "Advanced"].sample, start_date:Faker::Date.in_date_period(month: 2), end_date: Faker::Date.in_date_period(month: 3),
+  max_number_of_partecipants: rand(1..10), time: rand(1..6), language: Faker::Nation.language, user: user, classroom_category:@classroom_category)
   @classroom.photo.attach(io: file, filename: 'Anastasiya Kim.png', content_type: 'image/png')
   @classroom.save!
 
   # 9
   file = URI.open('https://media.baamboozle.com/uploads/images/1399/1564544774_223225')
-  @classroom = Classroom.new(name: "Clever Cats", description:"Xiǎo Xióng", level:["Beginner", "Intermediate", "Advanced"].sample, user: user, classroom_category:@classroom_category)
+  @classroom = Classroom.new(name: "Clever Cats", description:"Xiǎo Xióng", level:["Beginner", "Intermediate", "Advanced"].sample, start_date:Faker::Date.in_date_period(month: 2), end_date: Faker::Date.in_date_period(month: 3),
+  max_number_of_partecipants: rand(1..10), time: rand(1..6), language: Faker::Nation.language, user: user, classroom_category:@classroom_category)
   @classroom.photo.attach(io: file, filename: 'Clever Cats.png', content_type: 'image/png')
   @classroom.save!
 
   # 10
   file = URI.open('https://i.pinimg.com/originals/b3/23/34/b32334f6f097016633ecfe15e2abe62f.jpg')
-  @classroom = Classroom.new(name: "The philosophical musicians", description:"Sen Cao", level:["Beginner", "Intermediate", "Advanced"].sample, user: user, classroom_category:@classroom_category)
+  @classroom = Classroom.new(name: "The the philosophers", description:"Sen Cao", level:["Beginner", "Intermediate", "Advanced"].sample, start_date:Faker::Date.in_date_period(month: 2), end_date: Faker::Date.in_date_period(month: 3),
+  max_number_of_partecipants: rand(1..10), time: rand(1..6), language: Faker::Nation.language, user: user, classroom_category:@classroom_category)
   @classroom.photo.attach(io: file, filename: 'Sen Cao.png', content_type: 'image/png')
   @classroom.save!
 
   # 11
   file = URI.open('https://external-preview.redd.it/UfMDSTiua6DgMA9NYEThsc56XzAhkda3CJ7DHSt6fxU.jpg?auto=webp&s=969cc9cbb6c63c1e2428eafce635d2aba194520d')
-  @classroom = Classroom.new(name: "Laugh n’ Learn", description:"Federica Di Vincenzo", level:["Beginner", "Intermediate", "Advanced"].sample, user: user, classroom_category:@classroom_category)
+  @classroom = Classroom.new(name: "Laugh n’ Learn", description:"Federica Di Vincenzo", level:["Beginner", "Intermediate", "Advanced"].sample, start_date:Faker::Date.in_date_period(month: 2), end_date: Faker::Date.in_date_period(month: 3),
+  max_number_of_partecipants: rand(1..10), time: rand(1..6), language: Faker::Nation.language, user: user, classroom_category:@classroom_category)
   @classroom.photo.attach(io: file, filename: 'Federica Di Vincenzo.png', content_type: 'image/png')
   @classroom.save!
 
   # 12
   file = URI.open('https://preview.redd.it/882uz84pnjt41.jpg?auto=webp&s=6188e68e4935073861fffc15bd0ea0e9d06481de')
-  @classroom = Classroom.new(name: "The Cool Nerds", description:"Marcin Niemiec", level:["Beginner", "Intermediate", "Advanced"].sample, user: user, classroom_category:@classroom_category)
+  @classroom = Classroom.new(name: "The Cool Nerds", description:"Marcin Niemiec", level:["Beginner", "Intermediate", "Advanced"].sample, start_date:Faker::Date.in_date_period(month: 2), end_date: Faker::Date.in_date_period(month: 3),
+  max_number_of_partecipants: rand(1..10), time: rand(1..6), language: Faker::Nation.language, user: user, classroom_category:@classroom_category)
   @classroom.photo.attach(io: file, filename: 'Marcin Niemiec.png', content_type: 'image/png')
   @classroom.save!
 
-
+  i += 1
 end
-
-
-
-
+end
 
 12.times do
   Skill.create!(

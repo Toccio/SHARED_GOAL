@@ -19,12 +19,14 @@
     </div>
     <div class="cards-display">
       <% @classrooms.each do |classroom| %>
-        <div class="index-card">
+        <div class="index-card"
+        style="background-image: linear-gradient(rgba(0,0,0,0.3),
+        rgba(0,0,0,0.3)), url('<%= cl_image_path classroom.photo.key, height: 300, crop: :fill %>')">
           <%= link_to "" , classroom_path(classroom) %>
           <h2> <%= classroom.name %></h2>
           <br>
+          <br>
           <p><strong> <%= classroom.description %> </strong></p>
-          <%= cl_image_tag classroom.photo.key %>
 
         </div>
       <% end %>

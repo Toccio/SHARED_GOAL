@@ -17,9 +17,10 @@
     </div>
     <div class="cards-display">
       <% @classroom_categories.each do |classroom_category| %>
-        <div class="index-card">
+        <div class="index-card"
+        style="background-image: linear-gradient(rgba(0,0,0,0.3),
+        rgba(0,0,0,0.3)), url('<%= cl_image_path classroom_category.photo.key, height: 300, crop: :fill %>')">
             <%= link_to "",classroom_category_classrooms_path(ClassroomCategory.first), class: "card-link" %>
-            <%= cl_image_tag classroom_category.photo.key%>
             <h2> <%= classroom_category.name %> </h2>
 
         </div>
