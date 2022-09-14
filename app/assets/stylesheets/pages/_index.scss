@@ -1,12 +1,17 @@
 .index-content  {
-  // position: relative;
+  position: relative;
   margin-top: 120px;
   margin-left: 15px;
-  left:  10vw;
   display: flex;
   justify-content: flex-start;
   width:90%;
   height: 100%;
+}
+
+.fixed_sidebar {
+  position: fixed;
+  left: 8vw;
+  z-index: 100;
 }
 
 .sidebar {
@@ -73,6 +78,7 @@
 
 .category-cards {
   position: relative;
+  padding-left: 30%;
 }
 
 .cards-direct .cards-subtitle {

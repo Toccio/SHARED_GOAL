@@ -1,9 +1,10 @@
 <div class="index-content">
   <div class="sidebar">
-    <div class="text"><%= link_to "Categories", lists_path %></div>
+    <div class="text"><%= link_to "Categories", list_path(List.first) %></div>
     <ul>
       <% @lists.each do |i| %>
-        <li><%= link_to i.name %></li>
+          <% @var = @lists.find_by(name: "#{i.name}") %>
+          <li><%= link_to i.name, instrument_path(@var.id) %></li>
       <% end %>
     </ul>
   </div>
@@ -12,7 +13,7 @@
     <div class="cards-title"><h1><strong>Categories</strong></h1></div>
     <div class="cards-display">
         <div class="music index-card">
-        <% @music = @lists.find_by(name: "Music") %>
+          <% @music = @lists.find_by(name: "Music") %>
           <%= link_to  "", list_path(@music.id), class: "card-link" %>
           <h2> Music </h2>
         </div>
@@ -47,30 +48,6 @@
         <div class="film index-card">
           <%= link_to "",  class: "card-link"%>
           <h2> Film & Video </h2>
-        </div>
-        <div class="uiux index-card">
-          <%= link_to "",  class: "card-link"%>
-          <h2> UI/UX Design </h2>
-        </div>
-        <div class="art index-card">
-          <%= link_to "",  class: "card-link"%>
-          <h2> Fine Art </h2>
-        </div>
-        <div class="marketing index-card">
-          <%= link_to "",  class: "card-link"%>
-          <h2> Marketing </h2>
-        </div>
-        <div class="leadership index-card">
-          <%= link_to "",  class: "card-link"%>
-          <h2> Leadership & Management </h2>
-        </div>
-        <div class="entrepreneurship index-card">
-          <%= link_to "",  class: "card-link"%>
-          <h2> Entrepreneurship </h2>
-        </div>
-        <div class="business index-card">
-          <%= link_to "",  class: "card-link"%>
-          <h2> Business Analytics </h2>
         </div>
     </div>
   </div>
