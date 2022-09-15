@@ -297,8 +297,8 @@ file = URI.open('https://fkb.dk/sites/frederiksberg.ddbcms.dk/files/title_image/
   @classroom.photo.attach(io: file, filename: 'Marcin Niemiec.png', content_type: 'image/png')
   @classroom.save!
 
-  i += 1
 end
+i += 1
 end
 
 12.times do

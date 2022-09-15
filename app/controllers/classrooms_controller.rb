@@ -4,6 +4,8 @@ class ClassroomsController < ApplicationController
   def index
     @lists = policy_scope(List).all
     @classroom_category = policy_scope(ClassroomCategory).find(params[:classroom_category_id])
+    # @classroom = policy_scope(Classroom).find(params[:classroom_category_id])
+
     # raise
     # @list = @classroom_category.list
     if params[:query].present?
@@ -14,6 +16,8 @@ class ClassroomsController < ApplicationController
   end
 
   def show
+    # @classroom_category = policy_scope(ClassroomCategory).find(params[:classroom_category_id])
+
   end
 
   def new
