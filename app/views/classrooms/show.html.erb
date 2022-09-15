@@ -62,3 +62,8 @@
     </div>
   </div>
   <%= link_to "Delete", classroom_path(@classroom), class: "navigate-button", data: { confirm: "Are you sure?" }, method: :delete%>
+
+<div class="card-category"
+style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @classroom.photo.key, size: 100 unless photo.picture.url.blank?')">
+  Cool article
+</div>
