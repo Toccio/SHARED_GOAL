@@ -57,7 +57,7 @@
         <div class="col-12 col-lg-6">
           <%# <%= cl_image_tag @classroom.photo.key %>
           <% if @classroom.photo.url %>
-            <%= image_tag @classroom.photo.url, height: "100%", width: "100%", crop: :fill %>
+            <%= cl_image_tag @classroom.photo.url, height: "100%", width: "100%", crop: :fill %>
           <% end %>
         </div>
       </div>
