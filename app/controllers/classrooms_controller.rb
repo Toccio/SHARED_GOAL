@@ -49,7 +49,8 @@ class ClassroomsController < ApplicationController
 
   def destroy
     @classroom.destroy
-    redirect_to list_classrooms_path(@list)
+    redirect_to classroom_category_classrooms_path(ClassroomCategory.first)
+    #redirect_to classroom_category_classrooms_path(ClassroomCategory.first), classroom_url, notice: 'Classroom was successfully deleted'
   end
 
   private
