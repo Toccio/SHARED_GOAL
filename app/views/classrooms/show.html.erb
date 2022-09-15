@@ -1,6 +1,5 @@
-<%=link_to "Let's go back", lists_path, class: "navigate-button" %>
+<br><br>
 <div class="show-container container w-100">
-
   <div class="container ">
       <div class="row">
         <div class="col-12 col-lg-6">
@@ -8,16 +7,16 @@
             <h2 id="h2"><strong> <%= @classroom.name %> </strong></h2>
           </div>
           <div class="more-info pt-3 border-bottom">
-            <h5 class="more-how"><strong> Class creator </strong></h5>
+            <h5 class="more-how"><strong> Description </strong></h5>
             <p><%=@classroom.description %></p>
           </div>
           <div class="more-info pt-3">
             <h5 class="more-how"><strong> More info </strong></h5>
             <div class="d-flex pt-3">
               <div class="row">
+                <p>Creator: <%=@classroom.user.first_name %></p>
                 <p>Starts at: <%=@classroom.start_date %></p>
                 <p>Ends at: <%=@classroom.end_date %></p>
-                <p>Location: <%=@classroom.address %></p>
               </div>
               <div class="row">
                 <p>Skill level: <%=@classroom.level %></p>
@@ -28,8 +27,10 @@
           </div>
           <br>
           <div class= "row">
+          <% if current_user != @classroom.user %>
           <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            <%=link_to "Join now", "#" %>
+          <%=link_to "Join now", "#" %>
+          <% end %>
           </button>
           <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -38,9 +39,12 @@
                   <h5 class="modal-title" id="exampleModalLabel">Verification</h5>
                 </div>
                 <div class="modal-body">
-                  Are you sure you have the required level?
+                  Are you sure you have a required level?
                 </div>
                 <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                  <button type="button" class="btn btn-secondary">
+                    <%=link_to "Yes", classroom_category_classrooms_path(ClassroomCategory.first) %>
                   <button type="button" >
                     <%=link_to "Yes", classroom_bookings_path(classroom_id:@classroom), method: :post %>
                   </button>
@@ -55,13 +59,22 @@
         </div>
         <div class="col-12 col-lg-6">
           <%# <%= cl_image_tag @classroom.photo.key %>
+          <%= image_tag @classroom.photo.url, height: "100%", width: "100%", crop: :fill %>
         </div>
       </div>
     </div>
   </div>
-  <%= link_to "Delete", classroom_path(@classroom), class: "navigate-button", data: { confirm: "Are you sure?" }, method: :delete%>
 
-<div class="card-category"
-style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @classroom.photo.key, size: 100 unless photo.picture.url.blank?')">
-  Cool article
-</div>
+  <div class="row">
+    <div class="form-item col-2">
+      <%=link_to "Let's go back", classroom_category_classrooms_path(ClassroomCategory.first), class: "navigate-button" %>
+    </div>
+
+
+    <div class="form-item col-2">
+      <% if current_user == @classroom.user %>
+      <%= link_to "Delete", classroom_path(@classroom), class: "navigate-but", data: { confirm: "Are you sure?" }, method: :delete%>
+      <% end %>
+    </div>
+  </div>
+  <br><br>
