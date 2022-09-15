@@ -37,7 +37,6 @@
               <div class="modal-content">
                 <div class="modal-header">
                   <h5 class="modal-title" id="exampleModalLabel">Verification</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                   Are you sure you have a required level?
@@ -46,6 +45,11 @@
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
                   <button type="button" class="btn btn-secondary">
                     <%=link_to "Yes", classroom_category_classrooms_path(ClassroomCategory.first) %>
+                  <button type="button" >
+                    <%=link_to "Yes", classroom_bookings_path(classroom_id:@classroom), method: :post %>
+                  </button>
+                  <button type="button"  data-bs-dismiss="modal" aria-label="Close">
+                    <%=link_to "No" %>
                   </button>
                 </div>
               </div>
