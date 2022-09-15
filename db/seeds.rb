@@ -136,7 +136,6 @@ file = URI.open('https://fkb.dk/sites/frederiksberg.ddbcms.dk/files/title_image/
 @instrument.save!
 
 
-
 # GUITARS
 # 1 ACOUSTIC GUITAR
   file = URI.open('https://www.ibanez.com/common/product_artist_file/file/pc_main_acoustic_guitars_na.jpg')
@@ -297,8 +296,8 @@ file = URI.open('https://fkb.dk/sites/frederiksberg.ddbcms.dk/files/title_image/
   @classroom.photo.attach(io: file, filename: 'Marcin Niemiec.png', content_type: 'image/png')
   @classroom.save!
 
-end
-i += 1
+  end
+  i += 1
 end
 
 12.times do
