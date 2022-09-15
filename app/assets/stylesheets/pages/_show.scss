@@ -76,8 +76,13 @@
   color: black;
 }
 
+.modal-footer {
+  margin: auto;
+}
 
-.row {
+.row, .modal-footer {
+
+
 
   button {
     background: #4D04C4;

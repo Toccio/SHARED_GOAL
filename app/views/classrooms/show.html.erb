@@ -1,5 +1,3 @@
-
-
 <%=link_to "Let's go back", lists_path, class: "navigate-button" %>
 <div class="show-container container w-100">
 
@@ -41,12 +39,14 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                  Are you sure you have a required level?
+                  Are you sure you have the required level?
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                  <button type="button" class="btn btn-secondary">
+                  <button type="button" >
                     <%=link_to "Yes", lists_path(notice: true) %>
+                  </button>
+                  <button type="button"  data-bs-dismiss="modal">
+                    <%=link_to "No", lists_path(notice: false) %>
                   </button>
                 </div>
               </div>
@@ -56,7 +56,9 @@
         </div>
         <div class="col-12 col-lg-6">
           <%# <%= cl_image_tag @classroom.photo.key %>
-          <%= image_tag @classroom.photo.url, height: "100%", width: "100%", crop: :fill %>
+          <% if @classroom.photo.url %>
+            <%= image_tag @classroom.photo.url, height: "100%", width: "100%", crop: :fill %>
+          <% end %>
         </div>
       </div>
     </div>
