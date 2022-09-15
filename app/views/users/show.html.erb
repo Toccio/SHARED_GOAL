@@ -55,7 +55,7 @@
                             <p>OUTGOING BOOKINGS</p>
                             <% @out_bookings.each do |out_booking| %>
                               <%= out_booking.classroom.name %>
-                              <%= out_booking.status %>
+                              <p><%= out_booking.status %></p>
                             <% end %>
                         </div>
                     </div>
