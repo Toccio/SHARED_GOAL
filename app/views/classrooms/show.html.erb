@@ -42,9 +42,6 @@
                   Are you sure you have a required level?
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                  <button type="button" class="btn btn-secondary">
-                    <%=link_to "Yes", classroom_category_classrooms_path(ClassroomCategory.first) %>
                   <button type="button" >
                     <%=link_to "Yes", classroom_bookings_path(classroom_id:@classroom), method: :post %>
                   </button>
