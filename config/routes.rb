@@ -11,11 +11,13 @@ Rails.application.routes.draw do
 
   resources :classroom_categories, only: [:show] do
     resources :classrooms, only: [:index, :new, :create] do
-      resources :bookings, only: [:index, :new, :create]
     end
   end
 
-  resources :classrooms, only: [:edit, :update, :destroy, :show]
+  resources :classrooms, only: [:edit, :update, :destroy, :show] do
+    resources :bookings, only: [:index, :new, :create]
+  end
+
   resources :bookings, only: [:destroy, :show]
 
   resources :chatrooms, only: [:new, :create, :show, :index] do

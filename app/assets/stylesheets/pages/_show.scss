@@ -1,6 +1,6 @@
 
 .show-container {
-  background-image: url(https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80);
+  background-image: url(https://images.unsplash.com/photo-1552154357-aaba12e68e64?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80);
   text-align: justify;
   margin: 0 auto;
   padding: 30px 30px 30px 30px;
@@ -63,6 +63,27 @@
   text-decoration: none;
   margin: 10px;
   font-family: Arial, Helvetica, sans-serif;
+  margin-left: 40px
+}
+
+.navigate-but {
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 4px;
+  background: #160d1c;
+  transition: background 0.3s ease;
+  width: fit-content;
+  align-self: start;
+  text-decoration: none;
+  margin: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 0px
+}
+
+.navigate-but:hover {
+  background: #4D04C4;
+  color: white;
+  transform: scale(1.01);
 }
 
 .navigate-button:hover {
@@ -76,8 +97,13 @@
   color: black;
 }
 
+.modal-footer {
+  margin: auto;
+}
 
-.row {
+.row, .modal-footer {
+
+
 
   button {
     background: #4D04C4;

@@ -1,54 +1,101 @@
-<div class="index-content">
+<div class="index-content"
+  data-controller="filter"
+>
+
   <div class="sidebar">
-    <div class="text"><%= link_to "Categories", list_path(List.first) %></div>
+    <div class="text"><%= link_to "Categories", lists_path %></div>
     <ul>
-      <% @lists.each do |i| %>
-          <% @var = @lists.find_by(name: "#{i.name}") %>
-          <li><%= link_to i.name, instrument_path(@var.id) %></li>
+      <% @lists.each do |list| %>
+        <li data-action="click->filter#hide" data-filter-target="list"><%= list.name%></li>
       <% end %>
     </ul>
   </div>
 
-  <div class="category-cards">
-    <div class="cards-title"><h1><strong>Categories</strong></h1></div>
-    <div class="cards-display">
-        <div class="music index-card">
-          <% @music = @lists.find_by(name: "Music") %>
-          <%= link_to  "", list_path(@music.id), class: "card-link" %>
-          <h2> Music </h2>
+
+<div>
+
+  <div>
+    <div  class="d-flex d-none filter-card"
+    data-filter-target="instrument"
+    >
+    <h3>RELATED SKILLS</h3>
+      <% @instruments.each do |instrument| %>
+        <div>
+            <%= link_to ""%>
+            <p data-action="click->filter#filtering"> <strong style="color:blue;"> <%= instrument.name %> </strong> </p>
+            <br>
         </div>
-        <div class="web index-card">
-          <%= link_to "",  class: "card-link"%>
-          <h2> Web Development </h2>
-        </div>
-        <div class="phtography index-card">
-          <%= link_to "",  class: "card-link"%>
-          <h2> Photography </h2>
-        </div>
-        <div class="animation index-card">
-          <%= link_to "",  class: "card-link"%>
-          <h2> Animation </h2>
-        </div>
-        <div class="graphic index-card">
-          <%= link_to "",  class: "card-link"%>
-          <h2> Graphic Design </h2>
-        </div>
-        <div class="illustration index-card">
-          <%= link_to "",  class: "card-link"%>
-          <h2> Illustration </h2>
-        </div>
-        <div class="personal index-card">
-          <%= link_to "",  class: "card-link"%>
-          <h2> Personal Development </h2>
-        </div>
-        <div class="writing index-card">
-          <%= link_to "",  class: "card-link"%>
-          <h2> Creative Writing </h2>
-        </div>
-        <div class="film index-card">
-          <%= link_to "",  class: "card-link"%>
-          <h2> Film & Video </h2>
-        </div>
+      <% end %>
+
     </div>
   </div>
+
+  <div>
+
+
+    <div class="classrooms" data-filter-target="classes">
+      <h1>All classes</h1>
+
+      <div class="category-cards">
+        <div class="cards-title"><h1><strong>Categories</strong></h1></div>
+          <div class="cards-display">
+            <% @classrooms.each do |classroom| %>
+            <div style="background-color:powderblue;">
+              <h2> <%= classroom.name %></h2>
+              <br>
+              <p><strong> <%= classroom.description %> </strong></p>
+            </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="tool d-none"
+    data-filter-target="inst">
+
+      <h1>All music classes</h1>
+
+      <div class="category-cards">
+        <div class="cards-title"><h1><strong>Categories</strong></h1></div>
+          <div class="cards-display">
+            <% @instruments.each do |instrument| %>
+            <div style="background-color:powderblue;">
+              <h2 data-action="click->filter#filtering"> <%= instrument.name %></h2>
+              <br>
+            </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="d-none"
+    data-filter-target="guitar">
+
+      <h1>All guitars</h1>
+
+      <div class="category-cards">
+        <div class="cards-title"><h1><strong>Categories</strong></h1></div>
+          <div class="cards-display">
+            <% @classroom_categories.each do |classroom_category| %>
+            <div style="background-color:powderblue;">
+              <h2 data-action="click->filter#filtering"> <%= classroom_category.name %></h2>
+              <br>
+            </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+</div>
+
 </div>
