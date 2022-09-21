@@ -4,7 +4,7 @@
       <div class="text"><%= link_to "Categories", list_path(List.first) %></div>
       <ul>
         <% @lists.each do |i| %>
-          <% @var = @lists.find_by(name: "Music") %>
+          <% @var = @lists.find_by(name: "#{i.name}") %>
           <li><%= link_to i.name, instrument_path(@var.id) %></li>
         <% end %>
       </ul>
