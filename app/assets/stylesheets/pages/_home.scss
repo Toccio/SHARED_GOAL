@@ -30,35 +30,40 @@
 .title h3 {
   color: #ffffff;
   opacity: 0.8;
-  font-size: 38px;
+  font-size: 3vw;
 }
 
 .title h1 {
   position: absolute;
   color: #F3EA00;
-  font-size: 89px;
+  font-size: 6vw;
   text-shadow: 4px 4px 4px #D8EA11;
   transform: rotate(-3deg);
   left: -5%;
-  top: 28%;
+  top: 32%;
   width: 100%;
+}
+
+.intro {
+  margin-top: 20%;
 }
 
 .intro h5 {
   color: #ffffff;
   opacity: 0.65;
-  font-size: 28px;
-  width: 570px;
+  font-size: 2vw;
+  max-width: 570px;
 }
 
 button {
-  padding: 10px 40px;
+  padding: 1vh 2vw;
   gap: 20px;
   border: 4px solid #F3EA00;
   border-radius: 8px;
-  width: 260px;
-  font-weight: 400;
+  min-width: 18vw;
+  font-weight: bolder;
   background-color: transparent;
+  margin-top: 5%;
 }
 
 button a {
@@ -66,8 +71,7 @@ button a {
   color: #F3EA00;
   font-size: 28px;
   font-weight: bolder;
-  display: flex;
-  align-items: center;
+  text-align: center;
 }
 
 button:hover {
@@ -81,15 +85,19 @@ button:hover a {
 
 .recommendation {
   display: flex;
-  margin-top: 80px;
-  margin-bottom: 40px;
+  align-items: center;
+  justify-content: space-around;
+  margin: 5vh 5vw;
+  width: 100%;
 }
 
 .card-container {
   display: flex;
   align-items: center;
+  justify-content: space-around;
   flex-direction: row;
   color: #ffffff;
+  width: 50%;
 }
 
 .card-container p {
@@ -109,9 +117,7 @@ button:hover a {
   padding: 20px 20px;
   border: 4px solid #F3EA00;
   border-radius: 8px;
-  width: 280px;
-  margin-right: 60px;
-  margin-left: 200px;
+  width: 40%;
 }
 
 .card-one a {
@@ -130,7 +136,7 @@ button:hover a {
   padding: 20px 20px;
   border: 4px solid #F300A1;
   border-radius: 8px;
-  width: 280px;
+  width: 40%;
   margin-right: 120px;
 }
 
@@ -148,14 +154,15 @@ button:hover a {
 
 .tetimonies {
   color: #ffffff;
-  position:relative;
+  width: 50%;
 }
 
 .testimony-one {
+  position:relative;
   background: rgba(39, 39, 40, 0.61);
   backdrop-filter: blur(50px);
   border-radius: 4px;
-  width: 460px;
+  width: 30vw;
   padding: 8px 8px;
   margin-bottom: 60px;
 }
@@ -166,10 +173,11 @@ button:hover a {
 }
 
 .testimony-two {
+  position:relative;
   background: rgba(39, 39, 40, 0.61);
   backdrop-filter: blur(50px);
   border-radius: 4px;
-  width: 460px;
+  width: 25vw;
   padding-left: 60px;
   padding: 8px 8px;
 }
@@ -188,11 +196,11 @@ button:hover a {
 }
 
 .testimony-one img {
-  left: 420px;
+  left:90%;
   top: -20px;
 }
 
 .testimony-two img {
-  left: -20px;
+  left: -3%;
   top: -20px;
 }
