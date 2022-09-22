@@ -1,8 +1,8 @@
 .layer {
   position:absolute;
-  bottom: 25%;
+  bottom: 35vh;
   width: 100%;
-  height: 50vh;
+  height: 40vh;
   background: #120127;
   z-index: -50;
 }
@@ -22,6 +22,7 @@
   top: 5%;
   left: 53%;
   z-index: 1;
+  margin-bottom: 5vh;
 }
 
 .title {
@@ -69,7 +70,7 @@ button {
 button a {
   text-decoration: none;
   color: #F3EA00;
-  font-size: 28px;
+  font-size: 2vw;
   font-weight: bolder;
   text-align: center;
 }
@@ -86,16 +87,13 @@ button:hover a {
 .recommendation {
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  margin: 5vh 5vw;
-  width: 100%;
+  justify-content: center;
+  margin: 5vh auto;
+  width: 90%;
 }
 
 .card-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-direction: row;
+  display: block;
   color: #ffffff;
   width: 50%;
 }
@@ -114,47 +112,54 @@ button:hover a {
 }
 
 .card-one {
+  float: left;
   padding: 20px 20px;
   border: 4px solid #F3EA00;
   border-radius: 8px;
-  width: 40%;
+  width: 280px;
+  height: 290px;
+  margin: 2vh 2vw;
 }
 
 .card-one a {
   color:#F3EA00
 }
 
-.card-one:hover {
+.card-one:hover, .card-one:focus {
   box-shadow: 0 0 10px #F3EA00, 0 0 40px #F3EA00,0 0 80px #F3EA00;
 }
 
-.card-one a:hover {
+.card-one a:hover, .card-one a:focus {
   text-shadow: 0 0 10px #F3EA00, 0 0 40px #F3EA00,0 0 80px #F3EA00;
 }
 
 .card-two{
+  float: left;
   padding: 20px 20px;
   border: 4px solid #F300A1;
   border-radius: 8px;
-  width: 40%;
-  margin-right: 120px;
+  width: 280px;
+  height: 290px;
+  margin: 2vh 2vw;
 }
 
 .card-two a {
   color: #F300A1;
 }
 
-.card-two:hover {
+.card-two:hover, .card-two:focus {
   box-shadow: 0 0 10px #F300A1, 0 0 40px #F300A1,0 0 80px #F300A1;
 }
 
-.card-two a:hover {
+.card-two a:hover, .card-two a:focus {
   text-shadow: 0 0 10px #F300A1, 0 0 40px #F300A1,0 0 80px #F300A1;
 }
 
 .tetimonies {
+  // float: left;
+  display: block;
   color: #ffffff;
-  width: 50%;
+  width: 40%;
 }
 
 .testimony-one {
@@ -203,4 +208,103 @@ button:hover a {
 .testimony-two img {
   left: -3%;
   top: -20px;
+}
+
+@media screen and (max-width: 918px) {
+
+  .recommendation {
+    display: block;
+    margin-top: 18vh;
+  }
+  .recommendation .card-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  }
+
+  .recommendation .tetimonies {
+    display: none;
+  }
+
+  .banner-content{
+    top: 200px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .banner-content .title h3 {
+    visibility: hidden;
+  }
+  .banner-content .title h1 {
+    font-size: 2.5rem;
+  }
+
+}
+
+@media  screen and (max-width: 796px) {
+  .banner-pic{
+    width: 100%;
+    opacity: 0.3;
+    overflow: hidden;
+  }
+
+  .banner-pic img {
+    width: 920px;
+    object-fit: cover;
+  }
+  .banner-content{
+    top: 200px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .intro h5 {
+    opacity: 1;
+  }
+
+  .recommendation {
+    margin-top: 2vh;
+  }
+}
+
+@media  screen and (max-width: 665px) {
+  .recommendation .card-container {
+    display: block;
+    width: 100%;
+    margin: auto;
+    padding-left: 16vw;
+  }
+}
+
+@media screen and (max-width: 589px) {
+  .title h1 {
+    min-width: 293px;
+    white-space: nowrap;
+  }
+  .intro h5 {
+    font-size: 0.7rem;
+  }
+  .intro a {
+    font-size: 1rem;
+  }
+}
+
+
+@media screen and (max-width: 456px) {
+  .title h1 {
+    left: -45px;
+  }
+}
+
+
+@media screen and (max-width: 414px){
+  .recommendation .card-container {
+    padding-left: 13vw;
+  }
+  .recommendation {
+    margin: 0;
+  }
+  .banner-pic img {
+    display: block;
+  }
 }
