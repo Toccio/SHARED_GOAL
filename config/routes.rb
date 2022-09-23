@@ -26,4 +26,10 @@ Rails.application.routes.draw do
 
   get 'booking/:id/accept', to: 'bookings#accept', as: :accept_booking
   get 'booking/:id/decline', to: 'bookings#decline', as: :decline_booking
+
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      resources :classrooms, only: [:index, :show, :update, :create, :destroy]
+    end
+  end
 end
