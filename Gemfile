@@ -23,6 +23,10 @@ gem 'redis', '~> 4.0'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'cloudinary', '~> 1.23.0'
 
+# gem for API tokens
+gem 'simple_token_authentication'
+
+
 # FAKER
 gem 'faker'
 
