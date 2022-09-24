@@ -362,3 +362,52 @@ right:0;
   background:url(https://images.unsplash.com/photo-1576153192396-180ecef2a715?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80);
   background-size: cover;
 }
+
+@media  screen and (max-width: 1099px) {
+  .cards-display {
+    grid-template-columns: 100% 100%;
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .fixed_sidebar {
+    position: absolute;
+    display: none;
+  }
+  .category-cards {
+    padding-left: 0;
+  }
+
+  .index-content  {
+    margin: 160px auto 0px auto;
+    width: 100%;
+  }
+
+  .cards-title h1 {
+    font-size: 16vw;
+    width: 88vw;
+  }
+
+  .cards-display {
+    margin-top: 60px;
+    margin-left: 10vw;
+  }
+}
+
+@media screen and (max-width: 705px) {
+  .cards-display {
+  grid-template-columns: 100%;
+  width: 300px;
+  }
+
+  .cards-display {
+    margin-left: 16vw;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .cards-display {
+    margin-top: 24px;
+  }
+}
