@@ -152,3 +152,9 @@
     margin: 16px 0;
   }
 }
+
+@media screen and (max-width: 860px) {
+  .navbar-fixed {
+    left: 1%;
+  }
+}
