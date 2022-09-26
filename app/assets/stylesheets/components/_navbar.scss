@@ -148,7 +148,13 @@
   .navbar-fixed {
     display: block;
   }
-  .navbar-profile .profile-items li:nth-child(2){
-    margin: 8px 0;
+  .navbar-search {
+    margin: 16px 0;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .navbar-fixed {
+    left: 1%;
   }
 }
