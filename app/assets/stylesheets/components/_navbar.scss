@@ -143,3 +143,12 @@
 .navbar-profile:hover {
   box-shadow: 0 0 10px #F300A1, 0 0 20px #F300A1,0 0 40px #F300A1;
 }
+
+@media screen and (max-width: 860px) {
+  .navbar-fixed {
+    display: block;
+  }
+  .navbar-profile .profile-items li:nth-child(2){
+    margin: 8px 0;
+  }
+}
