@@ -1,4 +1,3 @@
-<br><br>
 <div class="show-container container w-100">
   <div class="container ">
       <div class="row">
@@ -7,21 +6,21 @@
             <h2 id="h2"><strong> <%= @classroom.name %> </strong></h2>
           </div>
           <div class="more-info pt-3 border-bottom">
-            <h5 class="more-how"><strong> Description </strong></h5>
+            <h5 class="more-how"><strong class="sub-title-class"> Description </strong></h5>
             <p><%=@classroom.description %></p>
           </div>
           <div class="more-info pt-3">
-            <h5 class="more-how"><strong> More info </strong></h5>
-            <div class="d-flex pt-3">
-              <div class="row">
-                <p>Creator: <%=@classroom.user.first_name %></p>
-                <p>Starts at: <%=@classroom.start_date %></p>
-                <p>Ends at: <%=@classroom.end_date %></p>
+            <h5 class="more-how"><strong class="sub-title-class"> More info </strong></h5>
+            <div class="info-content">
+              <div class="column-one">
+                <p><span class="title-details">Creator: </span> <%=@classroom.user.first_name %></p>
+                <p><span class="title-details">Starts at: </span><%=@classroom.start_date %></p>
+                <p><span class="title-details">Ends at: </span><%=@classroom.end_date %></p>
               </div>
-              <div class="row">
-                <p>Skill level: <%=@classroom.level %></p>
-                <p>Language: <%=@classroom.language %></p>
-                <p>Duration: <%=@classroom.time %></p>
+              <div class="column-two">
+                <p><span class="title-details">Skill level: </span><%=@classroom.level %></p>
+                <p><span class="title-details">Language:</span> <%=@classroom.language %></p>
+                <p><span class="title-details">Duration: </span><%=@classroom.time %> hr/session</p>
               </div>
             </div>
           </div>
@@ -58,20 +57,17 @@
           <%# <%= cl_image_tag @classroom.photo.key %>
           <%= image_tag @classroom.photo.url, height: "100%", width: "100%", crop: :fill %>
         </div>
+          <div class="row">
+             <div class="form-item col-2">
+               <%=link_to "Let's go back", classroom_category_classrooms_path(ClassroomCategory.first), class: "navigate-button" %>
+             </div>
+
+            <div class="form-item col-2">
+              <% if current_user == @classroom.user %>
+              <%= link_to "Delete", classroom_path(@classroom), class: "navigate-but", data: { confirm: "Are you sure?" }, method: :delete%>
+              <% end %>
+            </div>
+          </div>
       </div>
     </div>
   </div>
-
-  <div class="row">
-    <div class="form-item col-2">
-      <%=link_to "Let's go back", classroom_category_classrooms_path(ClassroomCategory.first), class: "navigate-button" %>
-    </div>
-
-
-    <div class="form-item col-2">
-      <% if current_user == @classroom.user %>
-      <%= link_to "Delete", classroom_path(@classroom), class: "navigate-but", data: { confirm: "Are you sure?" }, method: :delete%>
-      <% end %>
-    </div>
-  </div>
-  <br><br>

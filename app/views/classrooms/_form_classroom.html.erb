@@ -16,25 +16,25 @@
           </div>
 
           <div class="row">
-            <div class="form-item col-4">
+            <div class="form-item col-sm-4">
               <%= f.input :level, collection: %w[Beginner Intermediate Advanced]%>
             </div>
-            <div class="form-item col-4">
+            <div class="form-item col-sm-4">
               <%= f.input :category, collection: %w[Music Web_Development Photography Animation Graphic_Design Illustration Personal_Development Creative_Writing Film&Video] %>
             </div>
-            <div class="form-item col-4">
+            <div class="form-item col-sm-4">
               <%= f.input :language, placeholder: 'For communication' %>
             </div>
           </div>
 
           <div class="row">
-            <div class="form-item col-4">
+            <div class="form-item col-sm-4">
               <%= f.input :start_date, as: :date, html5:true, placeholder: 'dd/mm/yyyy' %>
             </div>
-            <div class="form-item col-4">
+            <div class="form-item col-sm-4">
               <%= f.input :end_date, as: :date, html5:true, placeholder: 'dd/mm/yyyy' %>
             </div>
-            <div class="form-item col-4">
+            <div class="form-item col-sm-4">
               <%= f.input :time, :label => 'Duration of each class',:label_html => { :class => 'form-label'}, placeholder: 'In hours, example: 1.5' %>
             </div>
           </div>
@@ -44,8 +44,7 @@
               <%= f.input :photo, as: :file, input_html: { multiple: false } %>
             </div>
           </div>
-          <%# <%= f.input :updated_at, :order => [:day, :month, :year] %>
-          <%# <br> <br> <br> %>
+
           <div class="form-item col-12">
             <%= f.button :submit, "Let's go!"%>
           </div>
