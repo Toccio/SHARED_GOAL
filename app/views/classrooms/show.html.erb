@@ -1,5 +1,5 @@
 <div class="show-container container w-100">
-  <div class="container ">
+  <div class="container">
       <div class="row">
         <div class="col-12 col-lg-6">
           <div class="border-bottom">
@@ -12,12 +12,10 @@
           <div class="more-info pt-3">
             <h5 class="more-how"><strong class="sub-title-class"> More info </strong></h5>
             <div class="info-content">
-              <div class="column-one">
+              <div class="contents-user-card">
                 <p><span class="title-details">Creator: </span> <%=@classroom.user.first_name %></p>
                 <p><span class="title-details">Starts at: </span><%=@classroom.start_date %></p>
                 <p><span class="title-details">Ends at: </span><%=@classroom.end_date %></p>
-              </div>
-              <div class="column-two">
                 <p><span class="title-details">Skill level: </span><%=@classroom.level %></p>
                 <p><span class="title-details">Language:</span> <%=@classroom.language %></p>
                 <p><span class="title-details">Duration: </span><%=@classroom.time %> hr/session</p>
