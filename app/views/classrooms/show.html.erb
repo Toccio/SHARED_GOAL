@@ -22,13 +22,25 @@
               </div>
             </div>
           </div>
-          <br>
-          <div class= "row">
+        <div class="buttons">
+          <div class="button-back">
+           <%=link_to classroom_category_classrooms_path(ClassroomCategory.first) do %>
+             ⬅
+           <% end %>
+          </div>
+          <div class="button-delete">
+           <% if current_user == @classroom.user %>
+             <%= link_to "Delete", classroom_path(@classroom), data: { confirm: "Are you sure?" }, method: :delete%>
+           <% end %>
           <% if current_user != @classroom.user %>
-          <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
-          <%=link_to "Join now", "#" %>
+            <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <%=link_to "Join now", "#" %>
           <% end %>
           </button>
+         </div>
+        </div>
+          <br>
+
           <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
@@ -55,17 +67,6 @@
           <%# <%= cl_image_tag @classroom.photo.key %>
           <%= image_tag @classroom.photo.url, height: "100%", width: "100%", crop: :fill %>
         </div>
-          <div class="row">
-             <div class="form-item col-2">
-               <%=link_to "Let's go back", classroom_category_classrooms_path(ClassroomCategory.first), class: "navigate-button" %>
-             </div>
 
-            <div class="form-item col-2">
-              <% if current_user == @classroom.user %>
-              <%= link_to "Delete", classroom_path(@classroom), class: "navigate-but", data: { confirm: "Are you sure?" }, method: :delete%>
-              <% end %>
-            </div>
-          </div>
-      </div>
     </div>
   </div>

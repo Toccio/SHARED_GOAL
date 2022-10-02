@@ -138,7 +138,57 @@ p {
   }
 }
 
-.contents-user-card{
+.contents-user-card {
   column-width: 14em;
   column-gap: 1.33em;
+}
+
+.button-back {
+  width: max-content;
+  padding: 4px 8px;
+  border-radius: 8px;
+}
+
+.button-back a {
+  text-decoration: none;
+  color: #F3EA00;
+  font-size: 24px;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.button-back:hover,.button-back:focus  {
+  background-color: #F3EA00;
+  box-shadow: 0 0 10px #F3EA00, 0 0 15px #F3EA00,0 0 25px #F3EA00;
+}
+
+.button-back:hover a {
+  color: #120127;
+}
+.button-back:focus a {
+  color: #120127;
+}
+
+.button-delete {
+  width: max-content;
+  padding: 4px 8px;
+  border-radius: 8px;
+}
+
+.button-delete a {
+  text-decoration: none;
+  color: #F3EA00;
+  font-size: 20px;
+  font-weight: bolder;
+  text-align: center;
+}
+.button-delete:hover, .button-delete:focus {
+  background-color: #F3EA00;
+  box-shadow: 0 0 10px #F3EA00, 0 0 15px #F3EA00,0 0 25px #F3EA00;
+}
+.button-delete:hover a {
+  color: #120127;
+}
+.button-delete:focus a {
+  color: #120127;
 }
