@@ -1,7 +1,7 @@
-<div class="show-container container w-100">
+<div class="show-container w-100">
   <div class="container">
-      <div class="row">
-        <div class="col-12 col-lg-6">
+    <div class="row">
+      <div class="col-lg-6">
           <div class="border-bottom">
             <h2 id="h2"><strong> <%= @classroom.name %> </strong></h2>
           </div>
@@ -22,25 +22,20 @@
               </div>
             </div>
           </div>
-        <div class="buttons">
-          <div class="button-back">
-           <%=link_to classroom_category_classrooms_path(ClassroomCategory.first) do %>
-             ⬅
-           <% end %>
+          <div class="buttons">
+             <div class="button-back">
+               <%=link_to classroom_category_classrooms_path(ClassroomCategory.first) do %>
+               ⬅
+               <% end %>
+             </div>
+             <div class="button-delete">
+                <% if current_user == @classroom.user %>
+                <%= link_to "Delete", classroom_path(@classroom), data: { confirm: "Are you sure?" }, method: :delete%>
+                <% else %>
+                <%=link_to "Join now", "#" %>
+                <% end %>
+             </div>
           </div>
-          <div class="button-delete">
-           <% if current_user == @classroom.user %>
-             <%= link_to "Delete", classroom_path(@classroom), data: { confirm: "Are you sure?" }, method: :delete%>
-           <% end %>
-          <% if current_user != @classroom.user %>
-            <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            <%=link_to "Join now", "#" %>
-          <% end %>
-          </button>
-         </div>
-        </div>
-          <br>
-
           <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
@@ -61,12 +56,10 @@
               </div>
             </div>
           </div>
-          </div>
-        </div>
-        <div class="col-12 col-lg-6">
-          <%# <%= cl_image_tag @classroom.photo.key %>
-          <%= image_tag @classroom.photo.url, height: "100%", width: "100%", crop: :fill %>
-        </div>
-
+      </div>
+      <div class="col-lg-6">
+         <%= image_tag @classroom.photo.url, height: "100%", width: "100%", crop: :fill %>
+      </div>
     </div>
   </div>
+</div>
