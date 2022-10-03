@@ -8,7 +8,7 @@
 
 .container-chatroom {
 
-  background: white;
+  background: transparent;
   width: 125%;
   margin-top: 9px;
   margin-bottom: 9px;
@@ -23,7 +23,7 @@
     border-bottom: 1px solid $gray-200;
     margin-bottom: 0;
     padding: 1rem;
-    color: black;
+    color: #f3ea00;
   }
 
   .messages {
