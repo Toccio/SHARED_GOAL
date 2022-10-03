@@ -162,17 +162,21 @@
 
 @media screen and (max-width: 810px) {
   .navbar-profile.active {
-    width: 240px;
-    height: 240px;
+    width: 260px;
+    height: 180px;
     border-radius: 24px;
   }
   .navbar-profile .profile-items ul li {
     display: block;
-    width: 180px;
-    padding: 0;
+    width: 200px;
+    padding: 0 0 8px 8px;
+    text-align: left;
   }
   .navbar-profile .profile-items ul li:first-child {
-    padding: 0;
+    padding: 0 0 8px 8px;
   }
 
+  .navbar-profile .profile-items {
+    overflow: visible;
+  }
 }
