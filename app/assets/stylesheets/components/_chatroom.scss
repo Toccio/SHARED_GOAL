@@ -14,18 +14,25 @@
   color:#F3EA00;
   text-decoration: none;
   font-weight: bolder;
+  font-size: 1.4vw;
 }
 
 .start_button a:hover {
   text-shadow: 0 0 10px #F3EA00, 0 0 40px #F3EA00,0 0 80px #F3EA00;
 }
 
-.container-chatroom {
+.open-chatrooms {
+    position: fixed;
+    left: 8vw;
+    z-index: 100;
+}
 
+.container-chatroom {
+  position:relative;
+  left: 30vw;
   background: transparent;
-  width: 125%;
-  margin-top: 9px;
-  margin-bottom: 9px;
+  width: 60vw;
+  margin: 9px auto 9px auto;
   border-radius: 5px;
   height: calc(100vh - 120px);
   display: flex;
