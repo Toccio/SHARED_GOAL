@@ -1,6 +1,9 @@
 <div class="grid-container">
   <div class="open-chatrooms">
-    <%= link_to "Start a new chatroom", new_chatroom_path %>
+    <div class="start_button">
+        <%= link_to "Start a new chatroom", new_chatroom_path %>
+    </div>
+
     <div class="sidebar">
       <ul>
         <% @chatrooms.each do |chatroom| %>

@@ -6,6 +6,20 @@
   margin-right: 0px !important;
 }
 
+.start_button {
+  margin-bottom: 8px;
+}
+
+.start_button a {
+  color:#F3EA00;
+  text-decoration: none;
+  font-weight: bolder;
+}
+
+.start_button a:hover {
+  text-shadow: 0 0 10px #F3EA00, 0 0 40px #F3EA00,0 0 80px #F3EA00;
+}
+
 .container-chatroom {
 
   background: transparent;
