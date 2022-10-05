@@ -1,5 +1,5 @@
 .grid-container {
-  margin-top: 100px;
+  margin-top: 80px;
 }
 
 .d-flex {
@@ -32,7 +32,7 @@
   left: 30vw;
   background: transparent;
   width: 60vw;
-  margin: 9px auto 9px auto;
+  margin: 0px auto 9px auto;
   border-radius: 5px;
   height: calc(100vh - 120px);
   display: flex;
@@ -77,20 +77,6 @@ margin-right: 5px !important;
 }
 
 .open-chatrooms {
-  // height: calc(100vh - 120px);
-  // background: white;
-  // width: 100%;
-  // margin-top: 9px;
-  // margin-bottom: 9px;
-  // margin-left: 10px;
-  // border-radius: 5px;
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: space-between;
-  // flex-grow: 1;
-  // .open-chats {
-  //   margin-top: 10px;
-  // }
   margin-left: 15px;
   height: calc(100vh - 120px)
 
@@ -109,30 +95,13 @@ margin-right: 5px !important;
 
 }
 
-// Open-chat
-
-// .open-chats ul li{
-//   list-style: none;
-
-// }
-
-// .open-chats li {
-//   margin-top: 16px;
-
-// }
-
-// .open-chats a {
-//   font-weight: bolder;
-//   font-size: 24px;
-//   width: auto;
-//   text-decoration: none;
-//   color: #120127;
-// }
-
-
 #send-btn {
   border-color: black;
   border-radius: 5px;
   background-color: #120127;
   color: white;
+}
+
+@media screen and (max-width: 1275px) {
+
 }

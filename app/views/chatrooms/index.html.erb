@@ -1,12 +1,18 @@
-
-  <div class="index-content">
-    <div class="sidebar">
-      <ul>
-        <% @chatrooms.each do |chatroom| %>
-        <li><%= link_to chatroom.name, chatroom_path(chatroom) %></li>
-        <% end %>
-        <br>
-        <%= link_to "Start a new chatroom", new_chatroom_path%>
-      </ul>
+<div class="grid-container">
+  <div class="open-chatrooms">
+  <div class="sidebar">
+    <div class="start_button">
+      <%= link_to "Start a new chatroom", new_chatroom_path %>
     </div>
+    <ul>
+      <% @chatrooms.each do |chatroom| %>
+      <li><%= link_to chatroom.name, chatroom_path(chatroom) %></li>
+      <% end %>
+    </ul>
   </div>
+  </div>
+
+  <div class="container-chatroom">
+    <h1>Browse chatrooms or start a new one from the left <span class="chat-button" style="color: #f400a1; font-size: 0.8em;"><i class="fa-solid fa-message"></i></span></h1>
+  </div>
+</div>
