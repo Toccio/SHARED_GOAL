@@ -1,12 +1,27 @@
-
-  <div class="index-content">
-    <div class="sidebar">
-      <ul>
-        <% @chatrooms.each do |chatroom| %>
-        <li><%= link_to chatroom.name, chatroom_path(chatroom) %></li>
-        <% end %>
-        <br>
-        <%= link_to "Start a new chatroom", new_chatroom_path%>
-      </ul>
+<div class="grid-container">
+  <span class="chat-button" style="color: #f400a1; font-size: 1.6em;"><i class="fa-solid fa-message"></i></span>
+  <div class="open-chatrooms">
+    <div class="chat-sidebar">
+    <div class="start_button">
+      <%= link_to "Start a new chatroom", new_chatroom_path %>
+    </div>
+    <ul>
+      <% @chatrooms.each do |chatroom| %>
+      <li><%= link_to chatroom.name, chatroom_path(chatroom) %></li>
+      <% end %>
+    </ul>
     </div>
   </div>
+
+  <div class="container-chatroom">
+    <h1>Browse chatrooms or start a new one from the left <span style="color: #f400a1; font-size: 0.8em;"><i class="fa-solid fa-message"></i></span></h1>
+  </div>
+</div>
+
+<script>
+  var message = document.querySelector('.chat-button');
+  var sidebar = document.querySelector('.open-chatrooms');
+  message.onclick = function () {
+    sidebar.classList.toggle('active');
+  }
+</script>
