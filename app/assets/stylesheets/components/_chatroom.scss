@@ -26,9 +26,17 @@
 }
 
 .open-chatrooms {
-    position: fixed;
-    left: 8vw;
-    z-index: 100;
+  position: fixed;
+  left: 8vw;
+  z-index: 100;
+}
+
+.chat-sidebar li a{
+  text-decoration: none;
+  color: #F300A1;
+}
+.chat-sidebar li a:hover {
+  text-shadow: 0 0 10px #F300A1, 0 0 40px #F300A1,0 0 80px #F300A1;
 }
 
 .container-chatroom {
@@ -83,7 +91,6 @@ margin-right: 5px !important;
 .open-chatrooms {
   margin-left: 15px;
   height: calc(100vh - 120px)
-
 }
 
 .side-options {
