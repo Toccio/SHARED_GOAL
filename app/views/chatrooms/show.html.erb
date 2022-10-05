@@ -1,7 +1,7 @@
 <div class="grid-container">
   <span class="chat-button" style="color: #f400a1; font-size: 1.6em;"><i class="fa-solid fa-message"></i></span>
   <div class="open-chatrooms">
-    <div class="sidebar">
+    <div class="chat-sidebar">
       <div class="start_button">
         <%= link_to "Start a new chatroom", new_chatroom_path %>
       </div>
@@ -35,3 +35,11 @@
     <% end %>
   </div>
 </div>
+
+<script>
+  var message = document.querySelector('.chat-button');
+  var sidebar = document.querySelector('.open-chatrooms');
+  message.onclick = function () {
+    sidebar.classList.toggle('active');
+  }
+</script>

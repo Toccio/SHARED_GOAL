@@ -33,7 +33,9 @@
             <%= image_tag("login_pro.png", class: 'profile-image') %>
           </div>
           <div class="profile-items">
-            <li><%= link_to "Login", new_user_session_path %></li>
+            <ul>
+              <li><%= link_to "Login", new_user_session_path %></li>
+            </ul>
           </div>
         </div>
       <% end %>
@@ -48,6 +50,6 @@
         search.classList.toggle('active');
       };
       image.onclick = function() {
-        profile.classList.toggle('active')
+        profile.classList.toggle('active');
       };
     </script>
