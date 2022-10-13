@@ -12,7 +12,7 @@ puts "Database created 👌"
 
 user = User.create!(
   email: "scheggia1190@gmail.com",
-  password:"123456",
+  password: "123456",
   first_name: Faker::Games::Heroes.name,
   last_name: Faker::Creature::Bird.common_family_name,
   nickname: Faker::Games::Pokemon.name
@@ -109,7 +109,6 @@ i = 0
     @instrument.photo.attach(io: file, filename: 'Guitar.png', content_type: 'image/png')
     @instrument.save!
 
-
     # GUITARS
     # 1 ACOUSTIC GUITAR
     file = URI.open('https://www.ibanez.com/common/product_artist_file/file/pc_main_acoustic_guitars_na.jpg')
@@ -165,7 +164,6 @@ i = 0
     @classroom_category.photo.attach(io: file, filename: 'Multi-Neck Guitar.png', content_type: 'image/png')
     @classroom_category.save!
 
-
     # 10 Resonator GUITAR
     file = URI.open('https://www.musicianwave.com/wp-content/uploads/2021/08/Resonator-Guitar-1536x1152.jpg')
     @classroom_category = ClassroomCategory.new(name: "Resonator Guitar", instrument: @instrument)
@@ -183,7 +181,6 @@ i = 0
     @classroom_category = ClassroomCategory.new(name: "Pocket Guitar", instrument: @instrument)
     @classroom_category.photo.attach(io: file, filename: 'Pocket Guitar.png', content_type: 'image/png')
     @classroom_category.save!
-
 
     # CLASSROOMS
     # 1
